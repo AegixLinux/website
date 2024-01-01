@@ -6,7 +6,7 @@ title: Aegix Linux
 <a class="btn btn-lg btn-dark me-3 mb-4" href="/docs/">
   Documentation <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/google/docsy-example">
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/AegixLinux">
   Source Code <i class="fab fa-github ms-2 "></i>
 </a>
 <br>

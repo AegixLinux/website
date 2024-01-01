@@ -6,3 +6,4 @@ package-lock.json
 .git-orig
 .github-orig
 .vscode
+deploy.sh
