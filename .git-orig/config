@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/google/docsy-example.git
+	fetch = +refs/tags/v0.8.0:refs/tags/v0.8.0

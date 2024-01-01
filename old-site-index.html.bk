@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aegix Linux</title>
+    <link rel="shortcut icon" type="image/jpg" href="images/aegix-icon-1.png"/>
+
+    <style>
+        body {
+            background-color: #ECE3CE;
+            color: #3A4D39;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #739072;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            color: #ECE3CE;
+        }
+        .content {
+            padding: 20px;
+            background-color: #4F6F52;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .content p, .content a {
+            color: #ECE3CE;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .content a {
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .content a:hover {
+            background-color: #739072;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #3A4D39;
+            color: #ECE3CE;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Aegix Linux</h1>
+    </header>
+
+    <div class="content">
+            <h2>Installation from a booted Artix runit base</h2>
+            <p><code><b>$</b> curl -LO aegixlinux.org/install.sh && sh install.sh</code></p>
+            <img src="images/aegix-icon-1.png" alt="Aegix Icon">
+        <br>
+        <p>Discover the world of Aegix Linux. Stay tuned for updates!</p>
+        <a href="https://github.com/AegixLinux/aegixlinux" target="_blank">Check out the source code here.</a>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/mz0WYrKq4j0?si=YwopSXYKRRPtuxyP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!--iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
+
+        <!--img src="images/aegix-forest.png" alt="Aegix Forest">
+        -->
+    </div>
+    <footer>
+        <p>&copy; 2023 Aegix Linux</p>
+    </footer>
+</body>
+</html>

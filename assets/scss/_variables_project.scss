@@ -1,0 +1,24 @@
+/*
+
+Add styles or override variables from the theme here.
+
+*/
+
+$primary: #AE8612;
+$secondary: #4f6f52;
+$light: #739072;
+$dark: #3a4d39;
+$info: #4f6f52;
+$white: #ece3ce;
+$success: #23637a;
+$warning: #AE8612;
+$danger: #733217;
+
+
+// $td-box-colors: #4f6f52, #AE8612, #739072, #2f3f32;
+$td-box-colors: $dark, $primary, $secondary, $info, $white, $gray-600, $success, $warning, $dark, $danger, $primary, $secondary, $info !default;
+
+// $link-color: #AE8612; // Use your primary color for links
+$link-color: #4f6f52;
+$link-decoration: underline; // Example if you want links underlined
+$link-shade-percentage: 20%; // Adjust the shade percentage as desired

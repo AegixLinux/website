@@ -1,0 +1,9 @@
+.navbar-brand {
+  padding-left: 1rem;  // Adjust this as needed to match original spacing
+  padding-right: 1rem; // Adjust this as needed
+  // You may also want to adjust the logo size
+  img {
+    height: auto;      // Maintain the aspect ratio
+    width: 80px;       // Adjust width to suit your design
+  }
+}
