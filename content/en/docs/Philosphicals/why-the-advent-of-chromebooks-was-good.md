@@ -32,6 +32,6 @@ I admit I was into the idea of the chromebook when it first came out. This is ba
 
 The limited block device storage prompting users to save their files to the cloud is now an obvious red flag. 
 The old addages, which now feel almost worn out are still true.
+- **The cloud is just someone else's computer**.
 - If you're not paying for the product, you are the product.
-- The cloud is just someone else's computer.
 - If you don't have physical control of your data, you don't have control of your data.
