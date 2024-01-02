@@ -5,7 +5,10 @@ description: >
   GNU-minded folks tend to hate on chromebook computers for many reasons, but let me explain why it was actually advantageous for us.
 categories: [philosophicals]
 tags: [docs]
+weight: 10
 ---
+
+TL;DR: **The cloud is just someone else's computer**, but chromeOS forces big companies to build web apps that run in the browser.
 
 ## Chromebook good?
 
