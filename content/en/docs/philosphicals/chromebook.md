@@ -1,5 +1,5 @@
 ---
-title: Why the advent of Chromebooks was good
+title: Why the advent of the Chromebook wasn't all bad
 date: 2024-01-02
 description: >
   GNU-minded folks tend to hate on chromebook computers for many reasons, but let me explain why it was actually advantageous for us.
@@ -7,7 +7,7 @@ categories: [philosophicals]
 tags: [docs]
 ---
 
-## Why the advent of Chromebooks was good
+## Chromebook good?
 
 GNU-minded folks tend to hate on chromebook computers for many reasons, but let me explain why it was actually advantageous for us. 
 
