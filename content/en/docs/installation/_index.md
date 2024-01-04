@@ -3,7 +3,7 @@ title: Installation
 description: Install Aegix Linux
 categories: [installation]
 tags: [docs]
-weight: 2
+weight: 20
 ---
 
 ## Create a bootable USB

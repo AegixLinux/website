@@ -1,7 +1,7 @@
 ---
 title: Overview
 description: Project Overview
-weight: 1
+weight: 10
 ---
 
 ## What is it?

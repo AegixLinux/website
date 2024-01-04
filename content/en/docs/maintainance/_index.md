@@ -3,7 +3,7 @@ title: Maintainance
 description: Keep the system running smoothly
 categories: [maintainance]
 tags: [docs]
-weight: 3
+weight: 30
 ---
 
 ## Update the system
