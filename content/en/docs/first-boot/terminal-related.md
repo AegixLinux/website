@@ -8,7 +8,7 @@ tags: [docs]
 weight: 20
 ---
 
-## Terminal related
+## Get to know your Aegix Terminal
 
 ### Launching a terminal
 
