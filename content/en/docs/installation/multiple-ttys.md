@@ -22,9 +22,3 @@ In Linux systems, including Aegix Linux, multiple TTYs (Teletype Terminals) are 
 
 > Remember, when working in TTYs, you are working directly with a shell, so all the usual command-line tools and commands are available to you. This makes TTYs a powerful feature for system administration and advanced Linux usage.
 
-
-----------------
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._

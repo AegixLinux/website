@@ -2,7 +2,7 @@
 title: First Boot 
 description: What to do after you first boot a fresh Aegix Linux installation
 date: 2024-01-04
-categories: [installation, first-boot]
+categories: [first-boot]
 tags: [docs]
 weight: 25
 ---
