@@ -10,10 +10,24 @@ weight: 20
 
 ## Terminal related
 
+### Launching a terminal
+
 - `Ultra + Enter` to launch an instance of the Aegix build of the suckless terminal emulator `st`.
 - `Ultra + Shift + Enter` to toggle the drop-down terminal.
+- `Ultra + '` to toggle the drop-down calculator.
+    - This is just an instance of st running `bc` in interactive mode.
+
+### Changing the terminal font size
+
+- `Alt + Shift + K` increases the terminal font size.
+- `Alt + Shift + J` decreases the terminal font size.
+
+### Changing the terminal opacity
+
 - `Alt + a` darkens the terminal background by increasing opacity.
 - `Alt + s` lightens the terminal background by decreasing opacity.
 
-- `Ultra + '` to toggle the drop-down calculator.
-    - This is just an instance of st running `bc` in interactive mode.
+### Copying and pasting
+
+- `Alt + c` to copy.
+- `Alt + v` to paste.
