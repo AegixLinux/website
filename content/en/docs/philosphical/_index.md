@@ -1,6 +1,7 @@
 ---
-title: Philosophicals
-description: Keep the system running smoothly
+title: Philosophical
+description: >
+  Philosophical musings about Aegix Linux
 categories: [philosophicals]
 tags: [docs]
 weight: 100
