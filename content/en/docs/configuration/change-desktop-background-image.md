@@ -1,9 +1,9 @@
 ---
-title: Change the desktop background image
+title: Desktop Background
 date: 2024-01-05
 description: >
   Change the desktop background image with the setbg command.
-categories: [first-boot]
+categories: [configuration]
 tags: [docs]
 weight: 20
 ---

@@ -1,9 +1,9 @@
 ---
-title: Terminal Related
+title: Launching a Terminal
 date: 2024-01-01
 description: >
-  Some terminal-related things you want to know
-categories: [first-boot]
+  Some basic terminal-related things you want to know
+categories: [getting-started]
 tags: [docs]
 weight: 20
 ---
