@@ -1,5 +1,5 @@
 ---
-title: First Boot 
+title: Getting Started After First Boot 
 description: What to do after you first boot a fresh Aegix Linux installation
 date: 2024-01-04
 categories: [first-boot]
