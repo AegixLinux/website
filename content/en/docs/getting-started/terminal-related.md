@@ -1,5 +1,5 @@
 ---
-title: Launching a Terminal
+title: Launch a Terminal
 date: 2024-01-01
 description: >
   Some basic terminal-related things you want to know

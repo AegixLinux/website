@@ -1,11 +1,11 @@
 ---
 title: Connect to wifi
-date: 2024-01-01
+date: 2024-01-05
 description: > 
     Connect to wifi in Aegix Linux.
 categories: [getting-started]
 tags: [docs]
-weight: 200
+weight: 110
 ---
 
 ## Connect to wifi

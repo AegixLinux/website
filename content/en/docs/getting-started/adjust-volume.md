@@ -1,11 +1,11 @@
 ---
 title: Adjust Audio Volume
-date: 2024-01-01
+date: 2024-01-05
 description: >
   Adjusting the audio volume in Aegix Linux.
 categories: [getting-started]
 tags: [docs]
-weight: 200
+weight: 120
 ---
 
 ### Adjust Audio Volume
