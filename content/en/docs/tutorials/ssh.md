@@ -12,7 +12,7 @@ SSH (Secure Shell) is a network protocol that allows you to connect to other mac
 
 ## Generate an SSH key pair
 
-To connect to other machines using SSH, you'll need to generate an SSH key pair. You can do this using the `ssh-keygen` command. 
+To connect to other machines using SSH, you'll need to generate an SSH key pair. You can do this using the `ssh-keygen` command. If you run ssh-keygen without any options, it will use the ed25519 algorithm to generate your key pair.
 
 ## Copy your public key to the remote machine
 
