@@ -1,6 +1,6 @@
 ---
 title: Screen Brightness
-date: 2024-01-01
+date: 2024-01-05
 description: >
   Adjusting the screen brightness in Aegix Linux.
 categories: [getting-started]

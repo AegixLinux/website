@@ -5,6 +5,7 @@ description: >
   Did you know multiple TTYs (Teletype Terminals) are a fundamental feature in GNU/Linux systems including Aegix Linux?
 categories: [installation]
 tags: [docs]
+weight: 100
 ---
 
 In Linux systems, including Aegix Linux, multiple TTYs (Teletype Terminals) are a fundamental feature that allows you to access multiple terminal sessions directly from your physical machine. TTYs are essentially text-based terminals that let you interact with the system without using a graphical user interface (GUI). These are especially useful for troubleshooting, running multiple sessions simultaneously, or when working in a non-GUI environment.
@@ -21,4 +22,3 @@ In Linux systems, including Aegix Linux, multiple TTYs (Teletype Terminals) are 
     - **Learning and exploration**: Imagine the possibilities! 
 
 > Remember, when working in TTYs, you are working directly with a shell, so all the usual command-line tools and commands are available to you. This makes TTYs a powerful feature for system administration and advanced Linux usage.
-
