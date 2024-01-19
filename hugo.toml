@@ -83,6 +83,7 @@ description = "Aegix is an Arch/Artix-based Linux distro with a focus on simplic
 [params]
 copyright = "The Aegix Linux Project"
 # privacy_policy = "https://aegixlinux.org/privacy"
+ customCSS = ["scss/custom.scss"]
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
