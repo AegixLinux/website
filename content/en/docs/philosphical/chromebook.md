@@ -2,7 +2,7 @@
 title: Chromebook Bad?
 date: 2024-01-02
 description: >
-  GNU-minded folks tend to hate on chromebook computers for many reasons, but let me explain why it was actually advantageous for us.
+  GNU-minded folks tend to hate on chromebook computers for many reasons, but let me explain why the chromebook phenomenon was actually advantageous for us.
 categories: [philosophicals]
 tags: [docs]
 weight: 10
