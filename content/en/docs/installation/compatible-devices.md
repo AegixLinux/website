@@ -24,6 +24,7 @@ Aegix Linux installation is designed to be straightforward on machines that can 
 
 ### Other Hardware
 - **HP Z800 Office Server**
-- **32GB USB 3 Flash Drive**
+- **32GB USB 2.0 Flash Drive**
+  - Confirmed Aegix Linux installation on a T440 without internal storage using a PNY 32GB USB 2.0 Flash Drive as the target block device
 
 > We welcome and encourage testing on other hardware platforms. Your contributions help us improve Aegix Linux's compatibility and user experience. If you have successfully installed Aegix Linux on a device not listed here, please share your results.
