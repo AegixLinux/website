@@ -12,7 +12,7 @@ weight: 110
 "WayGix is a custom Wayland-based desktop environment for Aegix Linux. It's designed to be a lightweight, fast, and modern desktop environment that's easy to use and easy to customize. It's built on top of the Wayland display server protocol, which is designed to be more secure and more efficient than the older X11 protocol."
 (credit: GitHub CoPilot AI)
 
-## Let the hacking begin
+## Let the hacking begin ~ WAYgix
 
 The `install-w.sh` script started as a simple fork of `install-canary.sh` to basically not install any of the X11 packages. It's a work in progress, but it's a start.
 
