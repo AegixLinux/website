@@ -1,5 +1,5 @@
 ---
-title: W_Aegix WayGix Aegix Wayland Base 
+title: WAYLAND Aegix 
 description: The introduction of install-w.sh
 date: 2024-01-04
 categories: [ai]
@@ -7,7 +7,7 @@ tags: [docs]
 weight: 110
 ---
 
-## Why WayGix?
+## Take the W (install-`w`.sh)
 
 "WayGix is a custom Wayland-based desktop environment for Aegix Linux. It's designed to be a lightweight, fast, and modern desktop environment that's easy to use and easy to customize. It's built on top of the Wayland display server protocol, which is designed to be more secure and more efficient than the older X11 protocol."
 (credit: GitHub CoPilot AI)
