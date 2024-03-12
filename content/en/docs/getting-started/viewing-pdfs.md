@@ -53,4 +53,4 @@ map g goto top
 
 Tim note:
 There are also some helpful tips you try out right inside zathura by running `Ctrl + F1`.
-This command `groff -mom /usr/local/share/dwm/barbs.mom -Tpdf | zathura -` takes the barbs ministry of magic file invoked by groff, piped to zathura. Some fun functionality is outlined at the top of this document. My favorites being `s` to fit text to your window and `Ctrl + r` to invoke "reader mode" which inverts the colors.
+This command invoked by `Ctrl + F1`: `groff -mom /usr/local/share/dwm/barbs.mom -Tpdf | zathura -` takes the barbs ministry of magic file invoked by groff, piped to zathura. Some fun functionality is outlined at the top of this document. My favorites being `s` to fit text to your window and `Ctrl + r` to invoke "reader mode" which inverts the colors.
