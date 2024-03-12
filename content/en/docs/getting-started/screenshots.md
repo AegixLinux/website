@@ -4,7 +4,7 @@ description: >
   How to take a screenshot in Aegix Linux
 categories: [getting-started]
 tags: [docs]
-weight: 200
+weight: 210
 ---
 
 ## Take a screenshot
