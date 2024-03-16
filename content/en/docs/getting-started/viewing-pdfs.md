@@ -1,6 +1,8 @@
 ---
 title: Viewing PDFs
 date: 2024-03-12
+author: Mason Borchard
+authorURL: "https://github.com/mason-u-borchard"
 description: >
   Use `zathura` to view PDFs in the terminal.
 categories: [getting-started]

@@ -1,6 +1,8 @@
 ---
 title: Viewing Images
 date: 2024-01-05
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 description: >
   Use `sxiv` to view images in the terminal.
 categories: [getting-started]
