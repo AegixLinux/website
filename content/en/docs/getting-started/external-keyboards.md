@@ -1,5 +1,7 @@
 ---
 title: External Keyboards
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-05
 description: > 
     Connect to an external keyboard in Aegix Linux after booting.

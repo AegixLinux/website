@@ -1,5 +1,7 @@
 ---
 title: Anyconnect VPN
+author: Mason Borchard
+authorURL: "https://github.com/mason-u-borchard"
 description: >
   Get some quick assistance setting up the Anyconnect VPN client on Aegix.
 date: 2024-01-18

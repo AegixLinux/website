@@ -1,5 +1,7 @@
 ---
 title: Set Up Bluetooth
+author: Mason Borchard
+authorURL: "https://github.com/mason-u-borchard"
 description: >
   Get some quick assistance setting up bluetooth on Aegix.
 date: 2024-01-04

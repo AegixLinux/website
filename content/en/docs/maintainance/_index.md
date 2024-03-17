@@ -1,5 +1,7 @@
 ---
 title: Maintainance
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 description: Keep the system running smoothly
 categories: [maintainance]
 tags: [docs]
