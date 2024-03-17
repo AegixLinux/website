@@ -1,5 +1,7 @@
 ---
 title: Connect to wifi
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-05
 description: > 
     Connect to wifi in Aegix Linux.

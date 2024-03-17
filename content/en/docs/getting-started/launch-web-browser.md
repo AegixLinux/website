@@ -1,5 +1,7 @@
 ---
 title: Launch Web Browser
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-05
 description: > 
     Launch a web browser in Aegix Linux.

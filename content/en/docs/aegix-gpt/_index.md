@@ -1,5 +1,7 @@
 ---
-title: Aegix GPT 
+title: Aegix GPT
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 description: Not GPT partitioning, but a custom GPT called Aegix Expert
 date: 2024-01-04
 categories: [ai]

@@ -1,6 +1,8 @@
 ---
 title: Launch a Terminal
 date: 2024-01-01
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 description: >
   Some basic terminal-related things you want to know
 categories: [getting-started]

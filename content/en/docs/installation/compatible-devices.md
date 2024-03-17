@@ -1,5 +1,7 @@
 ---
 title: Compatible Devices
+author: Mason Borchard
+authorURL: "https://github.com/mason-u-borchard"
 date: 2024-02-07
 description: >
   Explore the range of devices tested and confirmed to be compatible with the Aegix Linux installation.

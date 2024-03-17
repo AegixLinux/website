@@ -1,5 +1,7 @@
 ---
-title: WAYLAND Aegix 
+title: WAYLAND Aegix
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 description: The introduction of install-w.sh
 date: 2024-01-04
 categories: [ai]

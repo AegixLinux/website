@@ -1,5 +1,7 @@
 ---
 title: Screenshots
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 description: >
   How to take a screenshot in Aegix Linux
 categories: [getting-started]

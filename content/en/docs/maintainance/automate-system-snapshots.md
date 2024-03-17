@@ -1,5 +1,7 @@
 ---
 title: System Snapshots
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-01
 description: >
   Automate system snapshot every time you update or install a package.

@@ -1,5 +1,7 @@
 ---
 title: Troubleshooting
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-01
 description: >
   What to do if your installation fails.

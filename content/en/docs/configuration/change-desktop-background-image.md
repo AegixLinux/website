@@ -1,5 +1,7 @@
 ---
 title: Desktop Background
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-05
 description: >
   Change the desktop background image with the setbg command.

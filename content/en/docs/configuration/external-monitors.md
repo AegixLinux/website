@@ -1,5 +1,7 @@
 ---
 title: External Monitors
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-05
 description: >
   Dealing with external monitors in Aegix Linux.

@@ -1,5 +1,7 @@
 ---
-title: Getting Started 
+title: Getting Started
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 description: What to do after you first boot a fresh Aegix Linux installation
 date: 2024-01-04
 categories: [first-boot]

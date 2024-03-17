@@ -1,5 +1,7 @@
 ---
 title: Overview
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 description: Project Overview
 weight: 10
 ---

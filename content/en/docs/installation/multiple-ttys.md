@@ -1,5 +1,7 @@
 ---
 title: Multiple TTYs
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-01
 description: >
   Did you know multiple TTYs (Teletype Terminals) are a fundamental feature in GNU/Linux systems including Aegix Linux?

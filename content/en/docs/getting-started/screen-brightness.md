@@ -1,5 +1,7 @@
 ---
 title: Screen Brightness
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-05
 description: >
   Adjusting the screen brightness in Aegix Linux.

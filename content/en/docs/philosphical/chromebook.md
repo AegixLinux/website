@@ -1,5 +1,7 @@
 ---
 title: Chromebook Bad?
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 date: 2024-01-02
 description: >
   GNU-minded folks tend to hate on chromebook computers for many reasons, but let me explain why the chromebook phenomenon was actually advantageous for us.

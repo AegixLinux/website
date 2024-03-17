@@ -1,5 +1,7 @@
 ---
 title: Installation
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
 description: Install Aegix Linux
 categories: [installation]
 tags: [docs]
