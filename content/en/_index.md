@@ -9,6 +9,9 @@ title: Aegix Linux
 <a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/AegixLinux">
   Source Code <i class="fab fa-github ms-2 "></i>
 </a>
+<a class="btn btn-lg btn-warning me-3 mb-4" href="/docs/vulnerability-mitigation/">
+  XZ Vulnerability Mitigation <i class="fas fa-exclamation-triangle ms-2"></i>
+</a>
 <br>
 <p class="lead mt-5" style="background-color: rgba(174, 134, 18, 0.65) !important; color: #ece3ce !important; display: inline-block; padding: 5px 10px; font-weight: bold;">An Elite GNU/Linux System</p>
 
