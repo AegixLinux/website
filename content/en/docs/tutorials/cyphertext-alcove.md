@@ -15,7 +15,7 @@ This is like that, only your little sibling in this scenario could be an advance
 This recipe will work on any POSIX compliant system, and we are using [Aegix Linux](https:aegixlinux.org) to demonstrate it.
 
 In the end, you'll have two aliases you can call from your terminal: `alcove` and `unalcove`.
-The first unlock your diary and the second locks it back up.
+The first unlocks your diary so you can use it, and the second locks it back up.
 
 ## TL;DR
 
