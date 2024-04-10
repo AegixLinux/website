@@ -27,6 +27,10 @@ mkdir ~/AlcoveVault
 gocryptfs ~/CyphertextAlcove ~/AlcoveVault
 cd ~/AlcoveVault && vim dear-diary.md
 cd ~ && fusermount -u ~/AlcoveVault
+echo '# Cyphertext Alcove' >> ~/.config/shell/aliasrc
+echo 'alias alcove="gocryptfs ~/CyphertextAlcove ~/AlcoveVault && cd ~/AlcoveVault"' >> ~/.config/shell/aliasrc
+echo 'alias unalcove="cd ~ && fusermount -u ~/AlcoveVault"' >> ~/.config/shell/aliasrc
+source ~/.config/shell/aliasrc
 ```
 
 ## Prerequisites
