@@ -202,9 +202,7 @@ The security of gocryptfs also depends on operational best practices, such as us
 
 While gocryptfs provides robust security features, it's essential to consider the entire system's security. For instance, the security of the encrypted data also depends on the underlying system security, password strength, and how well the encryption keys are protected.
 
-### In summary, 
-
-gocryptfs employs strong, modern cryptographic standards and practices, making it a safe tool for encrypting files and directories. However, the overall security also depends on how it's used and the broader system and operational security practices in place.
+__In summary__, gocryptfs employs strong, modern cryptographic standards and practices, making it a safe tool for encrypting files and directories. However, the overall security also depends on how it's used and the broader system and operational security practices in place.
 
 If you're using Aegix Linux, you already have an encrypted system drive, such that when your machine is off, your data is LUKS encrypted, and you're already on the right track to a secure system.
 
