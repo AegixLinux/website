@@ -1,3 +1,4 @@
+---
 title: Cyphertext Alcove
 author: Timothy Beach
 authorURL: "https://github.com/timbeach"
@@ -5,6 +6,7 @@ description: >
     Have you ever wanted a private journal with a lock your little sibling couldn't break into?  
 date: 2024-04-09
 weight: 10
+---
 
 ## Summary
 
