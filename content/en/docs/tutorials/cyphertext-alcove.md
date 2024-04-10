@@ -18,6 +18,8 @@ This recipe will work on any POSIX compliant system, and we are using [Aegix Lin
 
 ### Create a directory
 
+This will be our encrypted container for our notes.
+
 ``` Shell
 mkdir CyphertextAlcove
 ```
