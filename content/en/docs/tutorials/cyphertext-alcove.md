@@ -148,8 +148,8 @@ On Aegix Linux, we use `~/.config/shell/aliasrc`.
 
 ``` Shell
 # Cyphertext Alcove
-alias alcove="gocryptfs ~/CyphertextAlcove ~/AlcoveVault"
-alias unalcove="fusermount -u ~/AlcoveVault"
+alias alcove="gocryptfs ~/CyphertextAlcove ~/AlcoveVault && cd ~/AlcoveVault"
+alias unalcove="cd ~ && fusermount -u ~/AlcoveVault"
 ```
 
 Don't foget to source your shell configuration file after adding the alias.
