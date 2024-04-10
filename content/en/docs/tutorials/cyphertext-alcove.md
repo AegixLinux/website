@@ -89,6 +89,9 @@ gocryptfs ~/CyphertextAlcove ~/AlcoveVault
 
 Of course you can name either of these anything you like. For example, your encrypted folder could be `.bk_1` and your mount point could be the empty `/mnt` directory already on your system. I'm using `CyphertextAlcove` and `AlcoveVault` for demonstrative purposes.
 
+In the end, you'll have two aliases you can call from your terminal: 'alcove' and 'unalcove'.
+The first unlock your diary and the second locks it back up.
+
 Here's what it looks like in my terminal:
 
 ``` Shell
