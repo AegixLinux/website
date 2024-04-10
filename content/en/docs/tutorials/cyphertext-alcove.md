@@ -14,7 +14,7 @@ Have you ever wanted a private journal with a lock your little sibling couldn't 
 This is like that, only your little sibling in this scenario could be an advanced threat actor, and your lock still won't break.
 This recipe will work on any POSIX compliant system, and we are using [Aegix Linux](https:aegixlinux.org) to demonstrate it.
 
-In the end, you'll have two aliases you can call from your terminal: 'alcove' and 'unalcove'.
+In the end, you'll have two aliases you can call from your terminal: `alcove` and `unalcove`.
 The first unlock your diary and the second locks it back up.
 
 ## TL;DR
