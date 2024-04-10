@@ -137,12 +137,10 @@ Of course the vault must be mounted via `gocryptfs` for access.
 
 ### Modern Cryptographic Primitives
 
-#### Encryption Algorithm: 
-
+__Encryption Algorithm:__
 gocryptfs uses AES-GCM (Advanced Encryption Standard in Galois/Counter Mode) for file content encryption. AES is a widely recognized standard, used globally for secure data encryption. GCM mode provides both confidentiality and integrity, ensuring data is encrypted securely and remains unaltered.
 
-#### Key Derivation: 
-
+__Key Derivation:__
 It employs scrypt for key derivation, which is a memory-hard function. This makes brute-force attacks on the password significantly more difficult, enhancing the security against password cracking attempts.
 
 ### Filename Encryption
