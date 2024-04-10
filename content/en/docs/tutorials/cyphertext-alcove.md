@@ -14,6 +14,17 @@ Have you ever wanted a private journal with a lock your little sibling couldn't 
 This is like that, only your little sibling in this scenario could be an advanced threat actor, and your lock still won't break.
 This recipe will work on any POSIX compliant system, and we are using [Aegix Linux](https:aegixlinux.org) to demonstrate it.
 
+## TL;DR
+
+``` Shell
+mkdir ~/CyphertextAlcove
+yay -S gocryptfs --noconfirm
+gocryptfs -init ~/CyphertextAlcove
+mkdir ~/AlcoveVault
+gocryptfs ~/CyphertextAlcove ~/AlcoveVault
+cd ~/AlcoveVault && vim dear-diary.md
+```
+
 ## Prerequisites
 
 ### Create a directory
@@ -21,7 +32,7 @@ This recipe will work on any POSIX compliant system, and we are using [Aegix Lin
 This will be our encrypted container for our notes.
 
 ``` Shell
-mkdir CyphertextAlcove
+mkdir ~/CyphertextAlcove
 ```
 
 ### Install gocryptfs
@@ -127,6 +138,20 @@ There is nothing there.
 ```
 
 This is profound on several levels which I'll leave you to ponder.
+
+### Automate usage with an alias
+
+Add this wherever you keep your aliases. 
+Normally this is in `~/.bashrc` or `~/.zshrc`.
+On Aegix Linux, we use `~/.config/shell/aliasrc`.
+
+``` Shell
+# Cyphertext Alcove
+alias alcove="gocryptfs ~/CyphertextAlcove ~/AlcoveVault"
+```
+
+Don't foget to source your shell configuration file after adding the alias.
+On Aegix it would be `source ~/.config/shell/aliasrc`.
 
 ### Integration with Obsidian
 
