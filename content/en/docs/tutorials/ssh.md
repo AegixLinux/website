@@ -5,7 +5,7 @@ authorURL: "https://github.com/timbeach"
 description: >
   Get some quick assistance creating an ssh key pair to connect to other machines on your network or out on the internet.
 date: 2024-01-01
-weight: 4
+weight: 40
 ---
 
 ## What is SSH?

@@ -5,7 +5,7 @@ authorURL: "https://github.com/mason-u-borchard"
 description: >
   Get some quick assistance setting up bluetooth on Aegix.
 date: 2024-01-04
-weight: 5
+weight: 50
 ---
 
 {{< figure src="/images/aegix_penguin_using_bluetooth_headset.png" width="400" class="figure-center" >}} 

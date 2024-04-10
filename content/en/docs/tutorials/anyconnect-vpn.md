@@ -5,7 +5,7 @@ authorURL: "https://github.com/mason-u-borchard"
 description: >
   Get some quick assistance setting up the Anyconnect VPN client on Aegix.
 date: 2024-01-18
-weight: 6
+weight: 60
 ---
 
 {{< figure src="/images/penguin_using_corporate_vpn.png" width="400" class="figure-center" >}} 
