@@ -132,3 +132,59 @@ This is profound on several levels which I'll leave you to ponder.
 
 This may be totally obvious, but you can use your decrypted filesystem directory as an Obsidian vault, assuming you trust Obsidian enough to do that for your use case.
 Of course the vault must be mounted via `gocryptfs` for access.
+
+## Why should I trust gocryptfs?
+
+### Modern Cryptographic Primitives
+
+#### Encryption Algorithm: 
+
+gocryptfs uses AES-GCM (Advanced Encryption Standard in Galois/Counter Mode) for file content encryption. AES is a widely recognized standard, used globally for secure data encryption. GCM mode provides both confidentiality and integrity, ensuring data is encrypted securely and remains unaltered.
+
+#### Key Derivation: 
+
+It employs scrypt for key derivation, which is a memory-hard function. This makes brute-force attacks on the password significantly more difficult, enhancing the security against password cracking attempts.
+
+### Filename Encryption
+
+gocryptfs encrypts not only the file content but also the filenames. This adds an additional layer of privacy, preventing adversaries from inferring any information from the filenames themselves.
+
+### Forward Secrecy
+
+By using a unique, randomly generated file encryption key (FEK) for each file, gocryptfs ensures forward secrecy. Even if one file's key is somehow compromised, the other files remain secure due to their unique encryption keys.
+
+### Integrity and Authenticity
+
+The use of AES-GCM mode ensures that both the integrity and authenticity of the data are maintained. Any unauthorized modification of the encrypted data is detectable, which protects against tampering.
+
+### Open Source and Audited
+
+gocryptfs is open-source, allowing for community review and audit of its source code. This transparency helps in identifying and rectifying potential vulnerabilities. It has undergone independent security audits, which adds to its credibility and reliability.
+
+### User Space Implementation
+
+Being a FUSE (Filesystem in Userspace) based filesystem, gocryptfs operates in user space, which means it doesn't require kernel-level privileges. This isolation from the kernel reduces the risk of system-wide vulnerabilities.
+
+### Active Development and Maintenance
+
+Regular updates and active maintenance contribute to its safety, as security issues and bugs are promptly addressed.
+
+### Operational Security
+
+The security of gocryptfs also depends on operational best practices, such as using strong, unique passwords for encryption and safely managing the password and encryption keys.
+
+### Limitations
+
+While gocryptfs provides robust security features, it's essential to consider the entire system's security. For instance, the security of the encrypted data also depends on the underlying system security, password strength, and how well the encryption keys are protected.
+
+### In summary, 
+
+gocryptfs employs strong, modern cryptographic standards and practices, making it a safe tool for encrypting files and directories. However, the overall security also depends on how it's used and the broader system and operational security practices in place.
+
+If you're using Aegix Linux, you already have an encrypted system drive, such that when your machine is off, your data is LUKS encrypted, and you're already on the right track to a secure system.
+
+
+
+
+
+
