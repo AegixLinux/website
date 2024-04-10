@@ -35,7 +35,7 @@ yay -S gocryptfs --noconfirm
 ### Initialize the encrypted folder
 
 We must initialze the directory to prepare it for encryption.
-This step will prompt you for a passphrase, and it generate the encryption key.
+This step will prompt you for a passphrase and generate the encryption key.
 It is important that you make up a good one which you can remember.
 Whatever you choose, don't use `margaretthatcheris110%SEXY`.
 [Edward Snowden already nabbed that one.](https://youtu.be/yzGzB-yYKcc?si=Xfst589v7MrWmiYX&t=140) 
