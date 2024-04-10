@@ -23,6 +23,7 @@ gocryptfs -init ~/CyphertextAlcove
 mkdir ~/AlcoveVault
 gocryptfs ~/CyphertextAlcove ~/AlcoveVault
 cd ~/AlcoveVault && vim dear-diary.md
+cd ~ && fusermount -u ~/AlcoveVault
 ```
 
 ## Prerequisites
@@ -148,6 +149,7 @@ On Aegix Linux, we use `~/.config/shell/aliasrc`.
 ``` Shell
 # Cyphertext Alcove
 alias alcove="gocryptfs ~/CyphertextAlcove ~/AlcoveVault"
+alias unalcove="fusermount -u ~/AlcoveVault"
 ```
 
 Don't foget to source your shell configuration file after adding the alias.
