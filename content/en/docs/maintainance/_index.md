@@ -17,3 +17,12 @@ There is a built-in alias to make this easy. Just open a terminal and run:
 update
 ```
 
+This updates all your official repo packages along with any AUR packages you have installed.
+
+Sometimes you want to update the system without updating the AUR packages. You can do this by running:
+
+``` shell
+sudo pacman -Syu --noconfirm
+``` 
+
+Remove the `--noconfirm` flag to not skip the confirmation prompts.

@@ -2,10 +2,9 @@
 title: Cyphertext Alcove
 author: Timothy Beach
 authorURL: "https://github.com/timbeach"
-description: >
-    Have you ever wanted a private journal with a lock your little sibling couldn't break into?  
+description: Have you ever wanted a private journal with a lock your little sibling couldn't break into?  
 date: 2024-04-09
-weight: 10
+weight: 20
 ---
 
 ## Summary
@@ -16,6 +15,8 @@ This recipe will work on any POSIX compliant system, and we are using [Aegix Lin
 
 In the end, you'll have two aliases you can call from your terminal: `alcove` and `unalcove`.
 The first unlocks your diary so you can use it, and the second locks it back up.
+
+And btw, you can use this encrypted-folder recipe for any type of file, not just a diary.
 
 ## TL;DR
 
@@ -166,6 +167,11 @@ On Aegix it would be `source ~/.config/shell/aliasrc`.
 
 This may be totally obvious, but you can use your decrypted filesystem directory as an Obsidian vault, assuming you trust Obsidian enough to do that for your use case.
 Of course the vault must be mounted via `gocryptfs` for access.
+
+## What about other types of files?
+
+You can encrypt any type of file with `gocryptfs`. 
+This Cyphertext Alcove recipe is a demonstration of how to use it for private notes, but you can use it for any type of file you want to keep secure.
 
 ## Why should I trust gocryptfs?
 
