@@ -7,6 +7,12 @@ date: 2024-04-09
 weight: 10
 ---
 
+There are many password managers available that provide the convenience of storing your passwords in the cloud such that you can access them from any device. 
+
+The problem is that you are trusting a third party when you don't need to, not to mention that simply accessing secrets from a mobile device drastically increases your attack surface. 
+
+In case it isn't obvious, state-sponsored hackers aggressively target not only these cloud platforms but also all of the popular mobile devices that access them. 
+
 ## Prerequisites
 
 Firstly, make sure you have `pass` installed. You can install it with:
