@@ -7,7 +7,7 @@ date: 2024-04-09
 weight: 20
 ---
 
-## Summary
+## Setting the stage
 
 Have you ever wanted a private journal with a lock your little sibling couldn't break into?
 This is like that, only your little sibling in this scenario could be an advanced threat actor, and your lock still won't break.
@@ -115,6 +115,7 @@ SwitchLoggerToSyslog: Unix syslog delivery error
 
 I'm leaving in the warning/error messages above to demonstrate this working on a BTRFS system and to prove that those don't matter.
 Obviously I entered the passphrase above that I setup in an earlier step.
+
 ## Usage
 
 ### Accessing files
@@ -163,7 +164,7 @@ alias unalcove="cd ~ && fusermount -u ~/AlcoveVault"
 Don't foget to source your shell configuration file after adding the alias.
 On Aegix it would be `source ~/.config/shell/aliasrc`.
 
-### Integration with Obsidian
+## Integration with Obsidian
 
 This may be totally obvious, but you can use your decrypted filesystem directory as an Obsidian vault, assuming you trust Obsidian enough to do that for your use case.
 Of course the vault must be mounted via `gocryptfs` for access.
@@ -175,7 +176,7 @@ This Cyphertext Alcove recipe is a demonstration of how to use it for private no
 
 ## Why should I trust gocryptfs?
 
-### Modern Cryptographic Primitives
+#### Modern Cryptographic Primitives
 
 __Encryption Algorithm:__
 gocryptfs uses AES-GCM (Advanced Encryption Standard in Galois/Counter Mode) for file content encryption. AES is a widely recognized standard, used globally for secure data encryption. GCM mode provides both confidentiality and integrity, ensuring data is encrypted securely and remains unaltered.
@@ -183,35 +184,35 @@ gocryptfs uses AES-GCM (Advanced Encryption Standard in Galois/Counter Mode) for
 __Key Derivation:__
 It employs scrypt for key derivation, which is a memory-hard function. This makes brute-force attacks on the password significantly more difficult, enhancing the security against password cracking attempts.
 
-### Filename Encryption
+#### Filename Encryption
 
 gocryptfs encrypts not only the file content but also the filenames. This adds an additional layer of privacy, preventing adversaries from inferring any information from the filenames themselves.
 
-### Forward Secrecy
+#### Forward Secrecy
 
 By using a unique, randomly generated file encryption key (FEK) for each file, gocryptfs ensures forward secrecy. Even if one file's key is somehow compromised, the other files remain secure due to their unique encryption keys.
 
-### Integrity and Authenticity
+#### Integrity and Authenticity
 
 The use of AES-GCM mode ensures that both the integrity and authenticity of the data are maintained. Any unauthorized modification of the encrypted data is detectable, which protects against tampering.
 
-### Open Source and Audited
+#### Open Source and Audited
 
 gocryptfs is open-source, allowing for community review and audit of its source code. This transparency helps in identifying and rectifying potential vulnerabilities. It has undergone independent security audits, which adds to its credibility and reliability.
 
-### User Space Implementation
+#### User Space Implementation
 
 Being a FUSE (Filesystem in Userspace) based filesystem, gocryptfs operates in user space, which means it doesn't require kernel-level privileges. This isolation from the kernel reduces the risk of system-wide vulnerabilities.
 
-### Active Development and Maintenance
+#### Active Development and Maintenance
 
 Regular updates and active maintenance contribute to its safety, as security issues and bugs are promptly addressed.
 
-### Operational Security
+#### Operational Security
 
 The security of gocryptfs also depends on operational best practices, such as using strong, unique passwords for encryption and safely managing the password and encryption keys.
 
-### Limitations
+#### Limitations
 
 While gocryptfs provides robust security features, it's essential to consider the entire system's security. For instance, the security of the encrypted data also depends on the underlying system security, password strength, and how well the encryption keys are protected.
 
