@@ -16,7 +16,7 @@ This recipe will work on any POSIX compliant system, and we are using [Aegix Lin
 In the end, you'll have two aliases you can call from your terminal: `alcove` and `unalcove`.
 The first unlocks your diary so you can use it, and the second locks it back up.
 
-And btw, you can use this encrypted-folder recipe for any type of file, not just a diary.
+*And btw, you can use this encrypted-folder recipe for any type of file, not just a diary.*
 
 ## TL;DR
 

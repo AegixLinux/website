@@ -102,4 +102,5 @@ thisisencrypted
 ```
 
 ### A note on copy/paste in the terminal
+
 If you are brand new to TANKLINUX, one of the first things you'll want to learn how to do is copy text from the terminal. You are already used to `Ctrl + c` to copy from text editors or `Ctrl + Shift + c` to copy from some terminal emulators. The TANKLINUX build of ST (Suckless Simple Terminal) uses `Alt + c` to copy and `Alt + v` to copy and paste in the terminal. Vim, of course, uses other conventions, like `dd` to cut, `Shift + y` to yank (or copy) and `Shift + p` to paste.
