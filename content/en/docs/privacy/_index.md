@@ -11,11 +11,11 @@ weight: 20
 
 ## Don't trust third parties with your secrets
 
-When you use a third-party service to store your data or secrets, you are trusting them to keep it safe. 
+When you use a third-party service to store your data or secrets, you are trusting __them__ to keep it safe. 
 
 ### TNO
 
-Trust No One (TNO) is a principle that is often cited in the context of cryptography. 
+__Trust No One__ (TNO) is a principle that is often cited in the context of cryptography. 
 Everyday computer users can benefit from this principle by using real encryption they control to protect their data.
 
 When we say "real encryption" we mean the kind that bothers state-sponsored hackers.
