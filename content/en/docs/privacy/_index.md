@@ -11,7 +11,7 @@ weight: 20
 
 ## Don't trust third parties with your secrets
 
-When you use a third-party service to store your data or secrets, you are trusting __them__ to keep it safe. 
+When you use a third-party service to store your data or secrets, you are trusting __someone else__ to keep them safe. 
 
 ### TNO
 
