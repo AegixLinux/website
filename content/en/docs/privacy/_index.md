@@ -13,6 +13,13 @@ weight: 20
 
 When you use a third-party service to store your data or secrets, you are trusting __someone else__ unnecessarily. 
 
+<!-- ![Trust No One](/images/tno-album.png) -->
+<img src="/images/tno-album.png" alt="TNO Album Cover" width="350" />
+
+<!-- <div style="text-align: center;">
+    <img src="/images/tno-album.png" alt="TNO Album Cover" width="350" style="display: block; margin: auto;" />
+</div> -->
+
 ### TNO
 
 __Trust No One__ (TNO) is a principle that is often cited in the context of cryptography. 
@@ -27,3 +34,4 @@ __For starters, let's consider two very common needs:__
 2. A place to store private notes 
     - See [Cyphertext Alcove](/docs/privacy/cyphertext-alcove/)
         - This is a simple note manager that uses real encryption to encrypt and store notes (or any files) locally.
+
