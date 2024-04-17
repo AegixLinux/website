@@ -1,5 +1,5 @@
 ---
-title: Privacy
+title: Privacy BASICS
 author: Timothy Beach
 authorURL: "https://github.com/timbeach"
 description: Real cryptography exists
