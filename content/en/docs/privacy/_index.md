@@ -16,9 +16,11 @@ Forgive me for pointing out the obvious, but many of us need to be reminded of t
 
 In recent years, it seems that we've forgotten, or never learned that real, strong, *three-letter-agency-proof* [encryption exists outside of apps](https://thequantitative.medium.com/) and is available to us all. It's just fairly inconvenient for a normal user on a day to day basis.
 
-There is an old, almost-cliche-at-this-point principle that __there is always a trade-off between security and convenience__. Here we are attempting to aid in that balancing act by making the most inconvenient and thus the most secure practices a bit more convenient and tolerable without compromising real security. The focus here is practical cyber security for the individual, not security theater for the enterprise. 
+There is an old, almost-cliche-at-this-point principle that __there is always a trade-off between security and convenience__. 
 
-*Continue for details*.
+With *Aegix Privacy Basics* we are attempting to aid in that balancing act by making the most inconvenient and thus the most secure practices a bit more convenient and tolerable without compromising real security. The focus here is practical cyber security for the individual, not security theater for the enterprise. 
+
+*Continue reading for details*.
 
 <!-- ![Trust No One](/images/tno-album.png) -->
 <img src="/images/tno-album.png" alt="TNO Album Cover" width="350" />
@@ -42,3 +44,4 @@ __For starters, let's consider two very common needs:__
     - See [Cyphertext Alcove](/docs/privacy/cyphertext-alcove/)
         - This is a simple note manager that uses real, strong encryption to encrypt and store notes (or any files) locally.
 
+*If you made it this far, keep going. You'll get a scoobie snack*.
