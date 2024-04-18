@@ -4,6 +4,8 @@ author: Timothy Beach
 authorURL: "https://github.com/timbeach"
 description: Setup GPG for encryption
 date: 2024-04-09
+categories: [privacy, cryptography]
+tags: [docs]
 weight: 40
 ---
 

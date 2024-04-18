@@ -4,6 +4,8 @@ author: Timothy Beach
 authorURL: "https://github.com/timbeach"
 description: Use pass to encrypt and store passwords locally
 date: 2024-04-09
+categories: [privacy, cryptography]
+tags: [docs]
 weight: 10
 ---
 
