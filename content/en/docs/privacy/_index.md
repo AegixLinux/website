@@ -20,10 +20,10 @@ There is an old, almost-cliche-at-this-point principle that __there is always a 
 
 With *Aegix Privacy Basics* we are attempting to aid in that balancing act by making the most inconvenient and thus the most secure practices a bit more convenient and tolerable without compromising real security. The focus here is practical cyber security for the individual, not security theater for the enterprise. 
 
-*Continue reading for details*.
+<!-- *Continue reading for details*. -->
 
 <!-- ![Trust No One](/images/tno-album.png) -->
-<img src="/images/tno-album.png" alt="TNO Album Cover" width="350" />
+<!-- <img src="/images/tno-album.png" alt="TNO Album Cover" width="350" /> -->
 
 <!-- <div style="text-align: center;">
     <img src="/images/tno-album.png" alt="TNO Album Cover" width="350" style="display: block; margin: auto;" />
