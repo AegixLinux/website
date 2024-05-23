@@ -12,7 +12,7 @@ weight: 20
 
 {{< youtube J1AAW05zAgk >}}
 
-After downloading the [artix-base-runit](https://download.artixlinux.org/iso/artix-base-runit-20230814-x86_64.iso) ISO, you'll need to create a bootable USB drive. You can use any tool you like, but I recommend [Rufus](https://rufus.ie/en/) or [Ventoy](https://www.ventoy.net/en/index.html). They're free, open source, and work on Windows, Linux, and MacOS.
+Download this specific (aegix-hosted), weekly version of the [artix-base-runit](https://aegixlinux.org/artix-base-runit-20240516-x86_64.iso) ISO, you'll need to create a bootable USB drive. You can use any tool you like, but I recommend [Rufus](https://rufus.ie/en/) or [Ventoy](https://www.ventoy.net/en/index.html). They're free, open source, and work on Windows, Linux, and MacOS.
 
 If you're using Ventoy, you can just download the ISO and copy it to the USB drive. If you're using Rufus, you'll need to download the ISO and use Rufus to create the bootable USB.
 
