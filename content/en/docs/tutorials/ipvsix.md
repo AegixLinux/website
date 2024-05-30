@@ -75,7 +75,7 @@ Then `reboot`
 Post-reboot validation: 
 ``` Shell
 ❯ cat /proc/cmdline
-BOOT_IMAGE=/vmlinuz-linux root=UUID=<uuid-value> rw rootflags=subvol=@ loglevel=3 cryptdevice=UUID=<uuid-value>:aegixluks root=/dev/mapper/tankluks ipv6.disable=1
+BOOT_IMAGE=/vmlinuz-linux root=UUID=<uuid-value> rw rootflags=subvol=@ loglevel=3 cryptdevice=UUID=<uuid-value>:aegixluks root=/dev/mapper/aegixluks ipv6.disable=1
 ❯ ip -6 addr show
 ❯
 ❯ lsmod |grep ipv6
