@@ -70,6 +70,6 @@ For announcement of latest features, new videos, posts, etc.
 {{% blocks/section %}}
 <div style="text-align: center;">
   <img src="/aegix-icon-1.png" alt="Aegix logo" style="max-width: 300px; height: auto;">
-  <p>The aegis of Aegix</p>
+  <!--p>The aegis of Aegix</p-->
 </div>
 {{% /blocks/section %}}
