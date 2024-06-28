@@ -9,6 +9,9 @@ tags: [docs]
 weight: 20
 ---
 
+{{< figure src="/images/alcove_banner.jpeg" width="800" >}}
+
+
 ## Setting the stage
 
 Have you ever wanted a private journal with a lock your little sibling couldn't break into?
