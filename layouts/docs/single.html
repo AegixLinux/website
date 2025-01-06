@@ -16,10 +16,12 @@
 	{{ .Content }}
   {{ partial "section-index.html" . -}}
 	{{ partial "feedback.html" . -}}
+	{{/* Commenting out Disqus code since it's not used
 	{{ if (.Site.DisqusShortname) -}}
-		<br />
-		{{- partial "disqus-comment.html" . -}}
+	  <br />
+	  {{- partial "disqus-comment.html" . -}}
 	{{ end -}}
+	*/}}
 	{{ partial "page-meta-lastmod.html" . -}}
 </div>
 {{ end -}}
