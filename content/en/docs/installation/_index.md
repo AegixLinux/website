@@ -10,11 +10,11 @@ weight: 20
 
 ## Create a bootable USB
 
-Download this specific (aegix-hosted), weekly version of the <a href="https://aegixlinux.org/artix-base-runit-20240516-x86_64.iso"><strong><span style="font-size: 1.5em;">artix-base-runit ISO</span></strong></a>, you'll need to create a bootable USB drive. You can use any tool you like, but I recommend [Rufus](https://rufus.ie/en/) or [Ventoy](https://www.ventoy.net/en/index.html). They're free, open source, and work on Windows, Linux, and MacOS.
+Download this specific (aegix-hosted), weekly version of the <a href="https://aegixlinux.org/artix-base-runit-20241014-x86_64.iso"><strong><span style="font-size: 1.5em;">artix-base-runit ISO</span></strong></a>, you'll need to create a bootable USB drive. You can use any tool you like, but I recommend [Rufus](https://rufus.ie/en/) or [Ventoy](https://www.ventoy.net/en/index.html). They're free, open source, and work on Windows, Linux, and MacOS.
 
-After downloading the ISO, you can run `sha256sum artix-base-runit-20240516-x86_64.iso`, which should output the following hash. _We do this to ensure the ISO hasn't been tampered with._
+After downloading the ISO, you can run `sha256sum artix-base-runit-20241014-x86_64.iso`, which should output the following hash. _We do this to ensure the ISO hasn't been tampered with._
 ``` shell
-bd8250d1377c71279e947e248e2e9fd597666ce5080c4b842bf5467ebeb9b0ce  artix-base-runit-20240516-x86_64.iso
+ca103b6d52d7de6aa2737927c2a8667422bcbb62e95bbf3f4c69637c18f50bd8  artix-base-runit-20241014-x86_64.iso
 ```
 
 {{< youtube J1AAW05zAgk >}}
