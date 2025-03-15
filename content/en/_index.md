@@ -18,6 +18,10 @@ title: Aegix Linux
 <a class="btn btn-lg me-3 mb-4" href="https://github.com/AegixLinux" style="background-color: #966091; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
   Source Code <i class="fab fa-github ms-2"></i>
 </a>
+<!-- Added new Cyphertext Alcove button using complementary teal color -->
+<a class="btn btn-lg me-3 mb-4" href="/docs/privacy/cyphertext-alcove/" style="background-color: #76bee2; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
+  Cyphertext Alcove <i class="fas fa-lock ms-2"></i>
+</a>
 <br>
 <!-- Updated banner color to match muted theme -->
 <p class="lead mt-5" style="background-color: rgba(0,0,0,0.6) !important; color: white !important; display: inline-block; padding: 10px 18px; font-weight: bold; text-shadow: 0 0 5px rgba(0,0,0,0.5); border-radius: 5px;">An Elite GNU/Linux System</p>
