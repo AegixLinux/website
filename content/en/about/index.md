@@ -1,44 +1,55 @@
 ---
-title: About Aegix Linux
-linkTitle: About
-menu: {main: {weight: 10}}
+title: "Aegix Linux"
+linkTitle: "Home"
 ---
 
-{{% blocks/cover title="About Aegix Linux" image_anchor="bottom" height="auto" %}}
+{{< blocks/cover title="Discover Aegix Linux" image_anchor="center" height="full" >}}
+<p class="lead mt-3 mb-5" style="color: #fff; max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
+</p>
 
+<div class="mx-auto">
+	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="/docs/">
+		Documentation <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+	</a>
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href="https://github.com/AegixLinux/aegixlinux">
+		Source Code <i class="fab fa-github ml-2 "></i>
+	</a>
+</div>
 <p class="lead mt-5" style="background-color: rgba(174, 134, 18, 0.65) !important; color: #ece3ce !important; display: inline-block; padding: 5px 10px; font-weight: bold;">An Elite GNU/Linux System</p>
+{{< /blocks/cover >}}
 
-{{% /blocks/cover %}}
+{{< blocks/section color="dark" >}}
+{{% blocks/feature icon="fa-shield-alt" title="Security-Focused" %}}
+Full disk encryption with LUKS. Minimal attack surface with a focus on security best practices.
+{{% /blocks/feature %}}
 
-{{% blocks/lead color="dark" %}}
+{{% blocks/feature icon="fa-tachometer-alt" title="Blazing Fast" %}}
+Lightweight window manager and carefully selected software stack for maximum performance.
+{{% /blocks/feature %}}
 
-Aegix is a Linux system that sits on top of [Artix](https://artixlinux.org/), a systemd-free fork of [Arch Linux](https://archlinux.org). In the lower realms of Linux distro-hopping, people think **running Arch is a flex on Ubuntu users**, and **running Artix is a flex on Arch users**. 
+{{% blocks/feature icon="fa-terminal" title="Power User Ready" %}}
+Vim-inspired keybindings, terminal-centric workflow, and tools that respect your expertise.
+{{% /blocks/feature %}}
+{{< /blocks/section >}}
 
-Aegix is like a fork or custom flavor of Artix that aims to provide a more opinionated, turn-key experience for users who want to get up and running quickly with a secure, minimal, and easy-to-use system.
+{{< blocks/section >}}
+<div class="col-12">
+<h1 class="text-center">Why Choose Aegix Linux?</h1>
+<p class="text-center">Aegix combines the rolling release model of Arch with the stability of Artix, adding custom configurations and tools that make it perfect for developers, sysadmins, and power users.</p>
+</div>
+{{< /blocks/section >}}
 
-Deepen your understanding of the core technology that has been with us for ages. Invest in learning tools that don't quickly change and are not tied to any particular company or platform.
+{{< blocks/section color="primary" >}}
+{{% blocks/feature icon="fa-cogs" title="Runit Init System" %}}
+A simple and reliable init system that follows the Unix philosophy.
+{{% /blocks/feature %}}
 
-{{% /blocks/lead %}}
+{{% blocks/feature icon="fa-cubes" title="BTRFS Filesystem" %}}
+Advanced filesystem with snapshots, checksums, and compression.
+{{% /blocks/feature %}}
 
-{{% blocks/section color="light" %}}
-
-# Yay & the AUR
-{.text-center}
-
-One thing first-time Arch users quickly learn is that the [Arch User Repository](https://aur.archlinux.org/) (AUR) is a great way to install software. The AUR is a community-driven repository for Arch users to share and install software that is not available in the official repositories. This makes installing most of the software you want to use as easy as running: `yay -S <package-name>`.
-{.text-center}
-
-The `yay` command is a wrapper for the `pacman` package manager that makes it easy to install packages from the AUR. Aegix comes with `yay` pre-installed, so you can start installing software from the AUR right away.
-{.text-center}
-
-{{% /blocks/section %}}
-
-{{% blocks/section color="secondary" %}}
-
-# Responsible Secrets Management
-{.text-center}
-
-Aegix uses [pass](https://www.passwordstore.org/) for password management. Pass is a simple, secure, and open-source password manager that uses GPG encryption and git for version control. Pass is a great way to manage your passwords and other secrets in a secure and responsible way.
-{.text-center}
-
-{{% /blocks/section %}}
+{{% blocks/feature icon="fa-window-restore" title="Suckless Desktop" %}}
+Minimalist graphical environment with dwm, st, and dmenu.
+{{% /blocks/feature %}}
+{{< /blocks/section >}}
