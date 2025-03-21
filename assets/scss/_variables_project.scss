@@ -1,12 +1,54 @@
-$primary: #966091;       /* Muted purple from the glowing hearts */
-$secondary: #76bee2;  /* Warm golden amber */
-$light: #8ba9b0;         /* Muted blue-gray that works with the logo */
-$dark: #0a2029;          /* Deep blue-green from the night sky */
-$info: #5a8a92;          /* Muted teal that complements the logo */
-$white: #f0f6f7;         /* Off-white with slight blue tint */
-$success: #3e686f;       /* Deeper desaturated teal */
-$warning: #c9b470;       /* Muted gold for warnings */
-$danger: #b33b58;        /* Red-pink for error states */
+// $primary: #2a543c;     /* Deep forest green from the evergreen trees */
+// $secondary: #6a7d5e;   /* Muted sage green from the foliage */
+// $light: #d9e5d6;       /* Light misty green-white from the water reflection */
+// $dark: #1a2e20;        /* Very dark forest green for contrast */
+// $info: #4d6e5a;        /* Medium pine green that complements the image */
+// $white: #f5f8f4;       /* Off-white with slight green tint */
+// $success: #3e6851;     /* Rich emerald green */
+// $warning: #9b8d5d;     /* Muted forest gold for warnings */
+// $danger: #a54634;      /* Rustic red from forest floor for error states */
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// Primary color – a medium forest green from the evergreen trees
+$primary:   #607849;  // was #966091
+
+// Secondary color – a warm, muted brown drawn from tree bark/undergrowth
+$secondary: #946f59; // was #76bee2
+
+// Light – a soft, near-white with a slight gray/green undertone
+$light:     #dfe3de; // was #8ba9b0
+
+// Dark – a deep, nearly black green/gray that could echo the darker reflection on the water
+$dark:      #2a2f24; // was #0a2029
+
+// Info – a subdued gray-green (teal-leaning) that complements the overall palette
+$info:      #7f977f; // was #5a8a92
+
+// White – a clean off-white (still neutral, but pairs well with green/brown)
+$white:     #f7f9f7; // was #f0f6f7
+
+// Success – a richer, more saturated green to indicate positive status
+$success:   #3f6f45; // was #3e686f
+
+// Warning – a muted golden-brown for caution messages
+$warning:   #baa565; // was #c9b470
+
+// Danger – a red-pink that provides contrast with the greens without clashing
+$danger:    #b35458; // was #b33b58
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// $primary: #966091;       /* Muted purple from the glowing hearts */
+// $secondary: #76bee2;  /* Warm golden amber */
+// $light: #8ba9b0;         /* Muted blue-gray that works with the logo */
+// $dark: #0a2029;          /* Deep blue-green from the night sky */
+// $info: #5a8a92;          /* Muted teal that complements the logo */
+// $white: #f0f6f7;         /* Off-white with slight blue tint */
+// $success: #3e686f;       /* Deeper desaturated teal */
+// $warning: #c9b470;       /* Muted gold for warnings */
+// $danger: #b33b58;        /* Red-pink for error states */
 
 ////////////////////////////////////////////////////////
 /// 

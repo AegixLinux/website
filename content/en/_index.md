@@ -12,14 +12,14 @@ title: Aegix Linux
 </div>
 
 <!-- Updated button colors to match the muted theme -->
-<a class="btn btn-lg me-3 mb-4" href="/docs/" style="background-color: #3e686f; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
+<a class="btn btn-lg me-3 mb-4" href="/docs/" style="background-color: #607849; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
   Documentation <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg me-3 mb-4" href="https://github.com/AegixLinux" style="background-color: #966091; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
+<a class="btn btn-lg me-3 mb-4" href="https://github.com/AegixLinux" style="background-color: #946f59; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
   Source Code <i class="fab fa-github ms-2"></i>
 </a>
 <!-- Added new Cyphertext Alcove button using complementary teal color -->
-<a class="btn btn-lg me-3 mb-4" href="/docs/privacy/cyphertext-alcove/" style="background-color: #76bee2; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
+<a class="btn btn-lg me-3 mb-4" href="/docs/privacy/cyphertext-alcove/" style="background-color: #b35458; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
   Cyphertext Alcove <i class="fas fa-lock ms-2"></i>
 </a>
 <br>
