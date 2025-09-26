@@ -538,6 +538,83 @@ p, span, div, li, td {
   background: rgba(0, 255, 159, 0.1) !important;
 }
 
+/* TERMINAL SCROLLBAR STYLING */
+/* Style scrollbars for sidebar and main content */
+.td-sidebar, .td-sidebar-nav, #td-section-nav, .td-sidebar__inner {
+  /* Firefox */
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(0, 255, 159, 0.6) rgba(13, 13, 13, 0.8) !important;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.td-sidebar::-webkit-scrollbar,
+.td-sidebar-nav::-webkit-scrollbar,
+#td-section-nav::-webkit-scrollbar,
+.td-sidebar__inner::-webkit-scrollbar {
+  width: 8px !important;
+  background: rgba(13, 13, 13, 0.8) !important;
+}
+
+.td-sidebar::-webkit-scrollbar-track,
+.td-sidebar-nav::-webkit-scrollbar-track,
+#td-section-nav::-webkit-scrollbar-track,
+.td-sidebar__inner::-webkit-scrollbar-track {
+  background: rgba(13, 13, 13, 0.9) !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(0, 255, 159, 0.1) !important;
+}
+
+.td-sidebar::-webkit-scrollbar-thumb,
+.td-sidebar-nav::-webkit-scrollbar-thumb,
+#td-section-nav::-webkit-scrollbar-thumb,
+.td-sidebar__inner::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 159, 0.7) 0%,
+    rgba(0, 255, 159, 0.5) 50%,
+    rgba(0, 255, 159, 0.7) 100%
+  ) !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(0, 255, 159, 0.3) !important;
+  box-shadow: 
+    0 0 5px rgba(0, 255, 159, 0.3),
+    inset 0 0 5px rgba(0, 255, 159, 0.2) !important;
+}
+
+.td-sidebar::-webkit-scrollbar-thumb:hover,
+.td-sidebar-nav::-webkit-scrollbar-thumb:hover,
+#td-section-nav::-webkit-scrollbar-thumb:hover,
+.td-sidebar__inner::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 255, 0.8) 0%,
+    rgba(0, 255, 255, 0.6) 50%,
+    rgba(0, 255, 255, 0.8) 100%
+  ) !important;
+  border-color: rgba(0, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 0 8px rgba(0, 255, 255, 0.5),
+    inset 0 0 8px rgba(0, 255, 255, 0.3) !important;
+}
+
+.td-sidebar::-webkit-scrollbar-thumb:active,
+.td-sidebar-nav::-webkit-scrollbar-thumb:active,
+#td-section-nav::-webkit-scrollbar-thumb:active,
+.td-sidebar__inner::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 255, 255, 0.9) !important;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.7),
+    inset 0 0 10px rgba(0, 255, 255, 0.4) !important;
+}
+
+/* Corner where scrollbars meet */
+.td-sidebar::-webkit-scrollbar-corner,
+.td-sidebar-nav::-webkit-scrollbar-corner,
+#td-section-nav::-webkit-scrollbar-corner,
+.td-sidebar__inner::-webkit-scrollbar-corner {
+  background: rgba(13, 13, 13, 0.9) !important;
+}
+
 /* MOBILE NAVIGATION FIXES */
 /* Fix the actual sidebar toggle button from dev tools */
 .td-sidebar__toggle, .navbar-toggler {
