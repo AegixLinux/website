@@ -548,6 +548,38 @@ p, span, div, li, td {
   transition: all 0.3s ease !important;
 }
 
+/* RESPONSIVE: Hide hamburger on desktop (md and larger screens) */
+@media (min-width: 768px) {
+  .td-sidebar__toggle,
+  .btn.btn-link.td-sidebar__toggle,
+  button.td-sidebar__toggle,
+  .td-sidebar__toggle.d-md-none,
+  .td-sidebar__toggle.fas.fa-bars,
+  button[data-bs-toggle="collapse"][data-bs-target="#td-section-nav"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+}
+
+/* Ensure hamburger shows only on mobile (smaller than md breakpoint) */
+@media (max-width: 767.98px) {
+  .td-sidebar__toggle,
+  .btn.btn-link.td-sidebar__toggle,
+  button.td-sidebar__toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
 .td-sidebar__toggle:hover, .td-sidebar__toggle:focus,
 .navbar-toggler:hover, .navbar-toggler:focus {
   border-color: rgba(0, 255, 255, 0.8) !important;
