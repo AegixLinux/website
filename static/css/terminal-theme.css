@@ -538,6 +538,154 @@ p, span, div, li, td {
   background: rgba(0, 255, 159, 0.1) !important;
 }
 
+/* MOBILE NAVIGATION FIXES */
+/* Fix the actual sidebar toggle button from dev tools */
+.td-sidebar__toggle, .navbar-toggler {
+  border: 2px solid rgba(0, 255, 159, 0.6) !important;
+  background: rgba(13, 13, 13, 0.9) !important;
+  padding: 0.5rem !important;
+  border-radius: 2px !important;
+  transition: all 0.3s ease !important;
+}
+
+.td-sidebar__toggle:hover, .td-sidebar__toggle:focus,
+.navbar-toggler:hover, .navbar-toggler:focus {
+  border-color: rgba(0, 255, 255, 0.8) !important;
+  background: rgba(0, 255, 159, 0.1) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 159, 0.3) !important;
+}
+
+/* AGGRESSIVE FONT AWESOME HAMBURGER ICON STYLING */
+.td-sidebar__toggle.fas.fa-bars,
+.td-sidebar__toggle.fa.fa-bars,
+.td-sidebar__toggle {
+  color: #00ff9f !important;
+  font-size: 1.2rem !important;
+  text-shadow: 0 0 5px rgba(0, 255, 159, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.td-sidebar__toggle:hover {
+  color: #00ffff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7) !important;
+}
+
+/* Font Awesome pseudo-element targeting */
+.td-sidebar__toggle::before {
+  color: #00ff9f !important;
+  text-shadow: 0 0 5px rgba(0, 255, 159, 0.5) !important;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  content: "\f0c9" !important; /* Font Awesome hamburger icon */
+}
+
+.td-sidebar__toggle:hover::before {
+  color: #00ffff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7) !important;
+}
+
+/* Force the icon to show if Font Awesome isn't loading */
+.td-sidebar__toggle {
+  position: relative !important;
+}
+
+.td-sidebar__toggle:after {
+  content: "☰" !important; /* Unicode hamburger as fallback */
+  color: #00ff9f !important;
+  font-size: 1.2rem !important;
+  text-shadow: 0 0 5px rgba(0, 255, 159, 0.5) !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.td-sidebar__toggle:hover:after {
+  color: #00ffff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7) !important;
+}
+
+/* Hamburger icon lines */
+.navbar-toggler-icon {
+  background-image: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-around !important;
+  width: 20px !important;
+  height: 16px !important;
+  position: relative !important;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon {
+  position: relative !important;
+}
+
+/* Create custom hamburger lines */
+.navbar-toggler-icon::before {
+  content: '' !important;
+  display: block !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: #00ff9f !important;
+  box-shadow: 0 0 3px rgba(0, 255, 159, 0.5) !important;
+  position: absolute !important;
+  top: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar-toggler-icon::after {
+  content: '' !important;
+  display: block !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: #00ff9f !important;
+  box-shadow: 0 0 3px rgba(0, 255, 159, 0.5) !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Middle line */
+.navbar-toggler-icon {
+  background: #00ff9f !important;
+  height: 2px !important;
+  box-shadow: 0 0 3px rgba(0, 255, 159, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Hover effects for hamburger lines */
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:hover .navbar-toggler-icon::before,
+.navbar-toggler:hover .navbar-toggler-icon::after {
+  background: #00ffff !important;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7) !important;
+}
+
+/* Mobile dropdown menu styling */
+.navbar-collapse {
+  background: rgba(13, 13, 13, 0.95) !important;
+  border: 1px solid rgba(0, 255, 159, 0.3) !important;
+  border-radius: 4px !important;
+  margin-top: 0.5rem !important;
+  box-shadow: 0 0 20px rgba(0, 255, 159, 0.2) !important;
+}
+
+.navbar-collapse .navbar-nav .nav-link {
+  color: #00ff9f !important;
+  padding: 0.75rem 1rem !important;
+  border-bottom: 1px solid rgba(0, 255, 159, 0.1) !important;
+}
+
+.navbar-collapse .navbar-nav .nav-link:hover {
+  background: rgba(0, 255, 159, 0.1) !important;
+  color: #00ffff !important;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5) !important;
+}
+
 /* Scan line animation */
 body::after {
   content: '' !important;
