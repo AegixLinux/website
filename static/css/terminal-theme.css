@@ -1,0 +1,562 @@
+/* 💻 TIMBEACH.COM TERMINAL THEME - DIRECT CSS 💻 */
+
+/* Terminal body styling */
+body {
+  background: #0d0d0d !important;
+  color: #00ff9f !important;
+  font-family: 'Courier New', Consolas, Monaco, 'Lucida Console', monospace !important;
+}
+
+/* Fix landing page text readability */
+.td-cover-block p, 
+.td-cover-block .lead,
+.td-cover-block .td-content p,
+.td-box p,
+.bg-primary p,
+.bg-secondary p,
+section p {
+  color: #00ff9f !important;
+  text-shadow: 0 0 3px rgba(0, 255, 159, 0.3) !important;
+}
+
+/* Make sure all text in sections is readable */
+.td-box, .bg-primary, .bg-secondary {
+  color: #00ff9f !important;
+}
+
+.td-box *, .bg-primary *, .bg-secondary * {
+  color: inherit !important;
+}
+
+/* Terminal navbar with subtle glow */
+.td-navbar, .navbar {
+  background: rgba(13, 13, 13, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid #00ff9f !important;
+  box-shadow: 0 0 20px rgba(0, 255, 159, 0.1) !important;
+}
+
+.td-navbar .navbar-brand, .td-navbar .nav-link,
+.navbar .navbar-brand, .navbar .nav-link {
+  color: #00ff9f !important;
+  text-shadow: 0 0 5px rgba(0, 255, 159, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.td-navbar .nav-link:hover, .navbar .nav-link:hover {
+  color: #00ffff !important;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6) !important;
+}
+
+/* Terminal sidebar */
+.td-sidebar {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.98) 0%,
+    rgba(13, 13, 13, 0.95) 50%,
+    rgba(13, 13, 13, 0.98) 100%
+  ) !important;
+  border-right: 2px solid #00ff9f !important;
+  box-shadow: inset -5px 0 15px rgba(0, 255, 159, 0.1) !important;
+}
+
+.td-sidebar .td-sidebar-nav {
+  background: transparent !important;
+}
+
+.td-sidebar .td-sidebar-link {
+  color: #00cc7f !important;
+  border-bottom: 1px solid rgba(0, 255, 159, 0.2) !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s ease !important;
+  font-family: inherit !important;
+}
+
+.td-sidebar .td-sidebar-link:hover {
+  background: rgba(0, 255, 159, 0.1) !important;
+  color: #00ff9f !important;
+  text-shadow: 0 0 5px rgba(0, 255, 159, 0.5) !important;
+  border-left: 3px solid #00ffff !important;
+}
+
+.td-sidebar .td-sidebar-link.active {
+  background: rgba(0, 255, 159, 0.15) !important;
+  color: #00ffff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6) !important;
+  border-left: 4px solid #00ffff !important;
+}
+
+/* Terminal content area */
+.td-content {
+  background: #0d0d0d !important;
+  color: #00ff9f !important;
+  position: relative !important;
+}
+
+.td-content::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: 
+    linear-gradient(rgba(0, 255, 159, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 159, 0.03) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.td-content > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Terminal headers */
+h1, h2, h3, h4, h5, h6 {
+  color: #00ffff !important;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5) !important;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.3) !important;
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 1rem !important;
+  font-family: inherit !important;
+  letter-spacing: 0.5px !important;
+}
+
+h1 {
+  font-size: 2rem !important;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7) !important;
+}
+
+/* Terminal links */
+a {
+  color: #00ff9f !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+a:hover {
+  color: #00ffff !important;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.6) !important;
+  text-decoration: underline !important;
+}
+
+/* Terminal code blocks */
+pre, code {
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: #00ff41 !important;
+  border: 1px solid rgba(0, 255, 65, 0.3) !important;
+  font-family: 'Courier New', Consolas, Monaco, monospace !important;
+  text-shadow: 0 0 3px rgba(0, 255, 65, 0.3) !important;
+}
+
+.highlight pre {
+  background: rgba(0, 0, 0, 0.9) !important;
+  box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.2) !important;
+}
+
+/* Terminal tables */
+table {
+  background: rgba(13, 13, 13, 0.9) !important;
+  border: 2px solid rgba(0, 255, 159, 0.4) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 159, 0.1) !important;
+}
+
+th, td {
+  border: 1px solid rgba(0, 255, 159, 0.2) !important;
+  background: inherit !important;
+  color: inherit !important;
+  padding: 0.75rem !important;
+}
+
+th {
+  background: rgba(0, 255, 159, 0.1) !important;
+  color: #00ffff !important;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.4) !important;
+  font-weight: bold !important;
+}
+
+/* Terminal blockquotes */
+blockquote {
+  background: rgba(0, 255, 159, 0.05) !important;
+  border-left: 4px solid #00ff9f !important;
+  color: #00cc7f !important;
+  font-style: italic !important;
+  box-shadow: inset 5px 0 10px rgba(0, 255, 159, 0.1) !important;
+}
+
+/* Terminal badges and tags */
+.badge, .tag, .btn-sm, .btn-outline-primary, .btn-outline-secondary {
+  background: rgba(0, 255, 159, 0.15) !important;
+  color: #00ffff !important;
+  border: 1px solid rgba(0, 255, 159, 0.6) !important;
+  text-shadow: 0 0 3px rgba(0, 255, 255, 0.5) !important;
+  font-family: 'Courier New', Consolas, Monaco, monospace !important;
+  font-size: 0.8rem !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 2px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 
+    0 0 5px rgba(0, 255, 159, 0.2),
+    inset 0 0 10px rgba(0, 255, 159, 0.1) !important;
+}
+
+.badge:hover, .tag:hover, .btn-sm:hover, .btn-outline-primary:hover, .btn-outline-secondary:hover {
+  background: rgba(0, 255, 255, 0.2) !important;
+  border-color: #00ffff !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.8) !important;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 255, 0.4),
+    inset 0 0 15px rgba(0, 255, 255, 0.1) !important;
+}
+
+/* Specific targeting for docs sidebar tags */
+.td-sidebar .badge, 
+.td-sidebar .tag,
+.td-sidebar .btn-sm {
+  background: rgba(0, 255, 159, 0.2) !important;
+  border: 1px solid rgba(0, 255, 159, 0.8) !important;
+  color: #00ff9f !important;
+}
+
+/* Tag cloud specific styling */
+.td-tag-cloud .badge,
+.tag-cloud .badge {
+  margin: 0.2rem !important;
+  display: inline-block !important;
+}
+
+/* Terminal buttons */
+.btn {
+  background: linear-gradient(135deg, 
+    rgba(0, 255, 159, 0.2) 0%,
+    rgba(0, 255, 255, 0.1) 50%,
+    rgba(0, 255, 159, 0.2) 100%
+  ) !important;
+  border: 2px solid #00ff9f !important;
+  color: #00ffff !important;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5) !important;
+  font-family: 'Courier New', Consolas, Monaco, monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, 
+    rgba(0, 255, 255, 0.3) 0%,
+    rgba(0, 255, 159, 0.2) 50%,
+    rgba(0, 255, 255, 0.3) 100%
+  ) !important;
+  border-color: #00ffff !important;
+  color: #00ffff !important;
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.4),
+    inset 0 0 20px rgba(0, 255, 255, 0.1) !important;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8) !important;
+}
+
+/* Terminal sections with alternating colors */
+.td-box, .bg-primary, .bg-secondary {
+  border: 1px solid rgba(0, 255, 159, 0.3) !important;
+  color: #00ff9f !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Primary sections - Matrix Green theme */
+.bg-primary, .td-box:nth-child(odd) {
+  background: linear-gradient(135deg, 
+    rgba(0, 255, 159, 0.12) 0%,
+    rgba(0, 255, 159, 0.08) 50%,
+    rgba(0, 255, 159, 0.12) 100%
+  ) !important;
+  border-color: rgba(0, 255, 159, 0.4) !important;
+  box-shadow: 
+    0 0 25px rgba(0, 255, 159, 0.15),
+    inset 0 0 25px rgba(0, 255, 159, 0.08) !important;
+}
+
+/* Secondary sections - Terminal Cyan theme */
+.bg-secondary, .td-box:nth-child(even) {
+  background: linear-gradient(135deg, 
+    rgba(0, 255, 255, 0.1) 0%,
+    rgba(0, 255, 255, 0.06) 50%,
+    rgba(0, 255, 255, 0.1) 100%
+  ) !important;
+  border-color: rgba(0, 255, 255, 0.35) !important;
+  box-shadow: 
+    0 0 25px rgba(0, 255, 255, 0.12),
+    inset 0 0 25px rgba(0, 255, 255, 0.06) !important;
+}
+
+/* Third variation - Terminal Blue-Green */
+.td-box:nth-child(3n) {
+  background: linear-gradient(135deg, 
+    rgba(0, 200, 200, 0.1) 0%,
+    rgba(0, 200, 200, 0.06) 50%,
+    rgba(0, 200, 200, 0.1) 100%
+  ) !important;
+  border-color: rgba(0, 200, 200, 0.35) !important;
+  box-shadow: 
+    0 0 25px rgba(0, 200, 200, 0.12),
+    inset 0 0 25px rgba(0, 200, 200, 0.06) !important;
+}
+
+/* Hover effects for all sections */
+.td-box:hover, .bg-primary:hover, .bg-secondary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 
+    0 8px 35px rgba(0, 255, 159, 0.25),
+    inset 0 0 35px rgba(0, 255, 159, 0.12) !important;
+  border-color: rgba(0, 255, 159, 0.6) !important;
+}
+
+/* Additional readability fixes */
+.container, .row, .col, .text-dark, .text-black {
+  color: #00ff9f !important;
+}
+
+/* Cover page specific fixes */
+.td-cover-block .display-1,
+.td-cover-block .display-2,
+.td-cover-block .display-3,
+.td-cover-block .display-4,
+.td-cover-block .display-5,
+.td-cover-block .display-6 {
+  color: #00ffff !important;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7) !important;
+}
+
+/* Make sure any remaining dark text is visible */
+p, span, div, li, td {
+  color: inherit !important;
+}
+
+/* Override any Bootstrap text utilities that might be dark */
+.text-body, .text-muted, .text-secondary {
+  color: #00cc7f !important;
+}
+
+/* Additional badge and label styling */
+.label, .label-default, .label-primary, .label-secondary {
+  background: rgba(0, 255, 159, 0.15) !important;
+  color: #00ffff !important;
+  border: 1px solid rgba(0, 255, 159, 0.6) !important;
+  font-family: 'Courier New', Consolas, Monaco, monospace !important;
+}
+
+/* Button group and toolbar fixes */
+.btn-group .btn, .btn-toolbar .btn {
+  background: rgba(0, 255, 159, 0.15) !important;
+  border: 1px solid rgba(0, 255, 159, 0.6) !important;
+  color: #00ffff !important;
+}
+
+/* Pill badges and rounded badges */
+.badge-pill, .rounded-pill {
+  background: rgba(0, 255, 159, 0.15) !important;
+  color: #00ffff !important;
+  border: 1px solid rgba(0, 255, 159, 0.6) !important;
+}
+
+/* Category and tag listing fixes */
+.td-category, .td-tag {
+  background: rgba(0, 255, 159, 0.1) !important;
+  border: 1px solid rgba(0, 255, 159, 0.3) !important;
+  color: #00ff9f !important;
+}
+
+/* AGGRESSIVE TAG BACKGROUND FIXES */
+/* Force all white/light backgrounds to be dark */
+.badge[style*="background"], 
+.badge[style*="background-color"],
+.tag[style*="background"],
+.tag[style*="background-color"],
+.btn-sm[style*="background"],
+.btn-sm[style*="background-color"] {
+  background: rgba(0, 255, 159, 0.15) !important;
+  background-color: rgba(0, 255, 159, 0.15) !important;
+  color: #00ffff !important;
+  border: 1px solid rgba(0, 255, 159, 0.6) !important;
+}
+
+/* Target specific Bootstrap badge colors that might be overriding */
+.badge-light, .badge-white, .badge-secondary,
+.bg-light, .bg-white, .bg-secondary {
+  background: rgba(0, 255, 159, 0.15) !important;
+  background-color: rgba(0, 255, 159, 0.15) !important;
+  color: #00ffff !important;
+  border: 1px solid rgba(0, 255, 159, 0.6) !important;
+}
+
+/* Force dark text to be light */
+.badge .text-dark, .badge .text-black,
+.tag .text-dark, .tag .text-black,
+.btn-sm .text-dark, .btn-sm .text-black {
+  color: #00ffff !important;
+}
+
+/* Target any remaining light backgrounds */
+*[class*="bg-light"], 
+*[class*="bg-white"], 
+*[class*="badge-light"],
+*[class*="badge-secondary"] {
+  background: rgba(0, 255, 159, 0.15) !important;
+  background-color: rgba(0, 255, 159, 0.15) !important;
+  color: #00ffff !important;
+}
+
+/* Nuclear option - override any inline styles on badges */
+.td-sidebar *[style*="background: white"],
+.td-sidebar *[style*="background-color: white"],
+.td-sidebar *[style*="background: #fff"],
+.td-sidebar *[style*="background-color: #fff"],
+.td-content *[style*="background: white"],
+.td-content *[style*="background-color: white"],
+.td-content *[style*="background: #fff"],
+.td-content *[style*="background-color: #fff"] {
+  background: rgba(0, 255, 159, 0.15) !important;
+  background-color: rgba(0, 255, 159, 0.15) !important;
+  color: #00ffff !important;
+  border: 1px solid rgba(0, 255, 159, 0.6) !important;
+}
+
+/* TAXONOMY TERM FIXES - TARGET THE EXACT ELEMENTS */
+.taxonomy-term {
+  background: rgba(0, 255, 159, 0.15) !important;
+  border: 1px solid rgba(0, 255, 159, 0.6) !important;
+  color: #00ffff !important;
+  padding: 0.25rem 0.5rem !important;
+  margin: 0.2rem !important;
+  border-radius: 2px !important;
+  display: inline-block !important;
+  font-family: 'Courier New', Consolas, Monaco, monospace !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 
+    0 0 5px rgba(0, 255, 159, 0.2),
+    inset 0 0 10px rgba(0, 255, 159, 0.1) !important;
+}
+
+.taxonomy-term:hover {
+  background: rgba(0, 255, 255, 0.2) !important;
+  border-color: #00ffff !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.8) !important;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 255, 0.4),
+    inset 0 0 15px rgba(0, 255, 255, 0.1) !important;
+}
+
+.taxonomy-label, .taxonomy-count {
+  color: #00ffff !important;
+  font-family: inherit !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  display: inline !important;
+  visibility: visible !important;
+}
+
+.taxonomy-count {
+  color: #00ff9f !important;
+  opacity: 1 !important;
+  margin-left: 0.3rem !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 3px rgba(0, 255, 159, 0.6) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  padding: 0.1rem 0.3rem !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(0, 255, 159, 0.4) !important;
+}
+
+.taxonomy-count::before {
+  content: "[" !important;
+  color: #00ffff !important;
+}
+
+.taxonomy-count::after {
+  content: "]" !important;
+  color: #00ffff !important;
+}
+
+/* ARTICLE CARDS AND CATEGORY LISTINGS */
+/* Fix bright green article cards in category pages */
+.card, .article-teaser, .article-type-docs {
+  background: rgba(13, 13, 13, 0.9) !important;
+  border: 1px solid rgba(0, 255, 159, 0.3) !important;
+  color: #00ff9f !important;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 159, 0.1),
+    inset 0 0 20px rgba(0, 255, 159, 0.05) !important;
+}
+
+.card:hover, .article-teaser:hover {
+  background: rgba(13, 13, 13, 0.95) !important;
+  border-color: rgba(0, 255, 159, 0.6) !important;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 159, 0.2),
+    inset 0 0 30px rgba(0, 255, 159, 0.1) !important;
+}
+
+.card-body, .card-text, .card-title {
+  background: transparent !important;
+  color: #00ff9f !important;
+}
+
+.card-header, .card-footer {
+  background: rgba(0, 255, 159, 0.1) !important;
+  border-color: rgba(0, 255, 159, 0.3) !important;
+  color: #00ffff !important;
+}
+
+/* Article meta information */
+.article-meta, .card-subtitle, .text-muted {
+  color: #00cc7f !important;
+}
+
+/* Reading time and other meta */
+.td-reading-time, .reading-time {
+  color: #00cc7f !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  padding: 0.2rem 0.4rem !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(0, 255, 159, 0.2) !important;
+}
+
+/* List group items in cards */
+.list-group-item {
+  background: rgba(13, 13, 13, 0.8) !important;
+  border-color: rgba(0, 255, 159, 0.2) !important;
+  color: #00ff9f !important;
+}
+
+.list-group-item:hover {
+  background: rgba(0, 255, 159, 0.1) !important;
+}
+
+/* Scan line animation */
+body::after {
+  content: '' !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(
+    transparent 50%, 
+    rgba(0, 255, 159, 0.02) 50%
+  ) !important;
+  background-size: 100% 4px !important;
+  animation: scan-lines 0.1s linear infinite !important;
+  pointer-events: none !important;
+  z-index: 1000 !important;
+}
+
+@keyframes scan-lines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 4px; }
+}

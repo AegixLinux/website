@@ -19,9 +19,3 @@ To connect to other machines using SSH, you'll need to generate an SSH key pair.
 ## Copy your public key to the remote machine
 
 Once you've generated your SSH key pair, you'll need to copy your public key to the remote machine. You can do this using the `ssh-copy-id` command.
-
-## Video tutorial
-
-Below is a video that walks you through the process of generating an SSH key pair and copying your public key to the remote machine.
-
-{{% youtube M2gKFd36e1Y %}}

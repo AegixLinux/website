@@ -17,8 +17,6 @@ After downloading the ISO, you can run `sha256sum artix-base-runit-20250303-x86_
 6368cacc6dd8fdfe8ea74949d2c836d81c6e9d562f50f6ad2c1bf188502c4c51  artix-base-runit-20250303-x86_64.iso
 ```
 
-{{< youtube J1AAW05zAgk >}}
-
 If you're using Ventoy, you can just download the ISO and copy it to the USB drive. If you're using Rufus, you'll need to download the ISO and use Rufus to create the bootable USB.
 
 If you're coming from Ubuntu or another Linux distro, you can use the `dd` command to copy the ISO to the USB drive. For example:
@@ -32,8 +30,6 @@ sudo dd if=/path/to/artix-base-runit.iso of=/dev/sdX bs=4M status=progress oflag
 Once you've created the bootable USB, you'll need to boot from it. This will vary depending on your computer, but you'll need to press a key (usually F12 or F2) during boot to access the boot menu. From there, you can select the USB drive and boot from it.
 
 ## Install Aegix Linux
-
-{{< youtube mz0WYrKq4j0 >}}
 
 ### Connect to the internet
 

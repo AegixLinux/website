@@ -11,32 +11,34 @@
 
 /////////////////////////////////////////////////////////////////////////////////
 
-// Primary color – a medium forest green from the evergreen trees
-$primary:   #607849;  // was #966091
+// 💻 TIMBEACH.COM TERMINAL THEME - SITE WIDE 💻
+// Pure terminal aesthetic throughout the entire site
+// Primary color – Matrix green for buttons and main accents
+$primary:   #00ff9f;  // Matrix green
 
-// Secondary color – a warm, muted brown drawn from tree bark/undergrowth
-$secondary: #946f59; // was #76bee2
+// Secondary color – Terminal cyan for secondary elements  
+$secondary: #00ffff; // Terminal cyan
 
-// Light – a soft, near-white with a slight gray/green undertone
-$light:     #dfe3de; // was #8ba9b0
+// Light – Very dark terminal background
+$light:     #0d0d0d; // Deep terminal black
 
-// Dark – a deep, nearly black green/gray that could echo the darker reflection on the water
-$dark:      #2a2f24; // was #0a2029
+// Dark – Even deeper black for contrast
+$dark:      #000000; // Pure black
 
-// Info – a subdued gray-green (teal-leaning) that complements the overall palette
-$info:      #7f977f; // was #5a8a92
+// Info – Electric cyan for information elements
+$info:      #00ffff; // Electric cyan
 
-// White – a clean off-white (still neutral, but pairs well with green/brown)
-$white:     #f7f9f7; // was #f0f6f7
+// White – Terminal green text (not actually white)
+$white:     #00ff9f; // Matrix green for text
 
-// Success – a richer, more saturated green to indicate positive status
-$success:   #3f6f45; // was #3e686f
+// Success – Bright terminal green
+$success:   #00ff41; // Terminal success green
 
-// Warning – a muted golden-brown for caution messages
-$warning:   #baa565; // was #c9b470
+// Warning – Terminal amber/yellow
+$warning:   #ffff00; // Terminal yellow
 
-// Danger – a red-pink that provides contrast with the greens without clashing
-$danger:    #b35458; // was #b33b58
+// Danger – Terminal red
+$danger:    #ff0000; // Terminal red
 
 //////////////////////////////////////////////////////////////////////////////////////////
 

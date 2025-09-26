@@ -4,22 +4,22 @@ title: Aegix Linux
 
 {{< blocks/cover title="Discover Aegix Linux" image_anchor="top" height="full" >}}
 
-<div style="max-width: 700px; margin: 0 auto 30px auto;">
+<!-- <div style="max-width: 700px; margin: 0 auto 30px auto;">
   <p style="color: white; text-shadow: 0 0 10px rgba(0,0,0,0.8); font-size: 1.4rem; background-color: rgba(0,0,0,0.6); padding: 18px; border-radius: 5px; line-height: 1.6;">
     Latest release <strong><a href="https://github.com/AegixLinux/aegixlinux/blob/master/RELEASE_NOTES.md" style="color: #77C8F1; text-decoration: none;">Blood Moon</a></strong> is available now.
     <br>Existing users can fix update issues by removing the [community] lines from /etc/pacman.conf
   </p>
-</div>
+</div> -->
 
-<!-- Updated button colors to match the muted theme -->
-<a class="btn btn-lg me-3 mb-4" href="/docs/" style="background-color: #607849; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
+<!-- 🌆 Cyberpunk theme buttons with neon glow effects -->
+<a class="btn btn-lg me-3 mb-4" href="/docs/" style="background: linear-gradient(45deg, #00ffff, #0080ff); color: #0f0f23; border: none; text-shadow: none; font-weight: bold; box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);">
   Documentation <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg me-3 mb-4" href="https://github.com/AegixLinux" style="background-color: #946f59; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
+<a class="btn btn-lg me-3 mb-4" href="https://github.com/AegixLinux" style="background: linear-gradient(45deg, #ff00ff, #ff0040); color: white; border: none; text-shadow: none; font-weight: bold; box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);">
   Source Code <i class="fab fa-github ms-2"></i>
 </a>
-<!-- Added new Cyphertext Alcove button using complementary teal color -->
-<a class="btn btn-lg me-3 mb-4" href="/docs/privacy/cyphertext-alcove/" style="background-color: #b35458; color: white; border: none; text-shadow: 0 0 5px rgba(0,0,0,0.5);">
+<!-- Cyberpunk Cyphertext Alcove button with matrix green glow -->
+<a class="btn btn-lg me-3 mb-4" href="/docs/privacy/cyphertext-alcove/" style="background: linear-gradient(45deg, #00ff41, #00ffff); color: #0f0f23; border: none; text-shadow: none; font-weight: bold; box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);">
   Cyphertext Alcove <i class="fas fa-lock ms-2"></i>
 </a>
 <br>
@@ -79,9 +79,11 @@ For announcement of latest features, new videos, posts, etc.
 {{% /blocks/section %}}
 
 
-{{% blocks/section color="white" %}}
+<!-- {{% blocks/section color="white" %}}
 <div style="text-align: center;">
   <img src="/aegix-icon-1.png" alt="Aegix logo" style="max-width: 300px; height: auto;">
-  <!--p>The aegis of Aegix</p-->
-</div>
+  <!--p>The aegis of Aegix</p
+</div> -->
+
+
 {{% /blocks/section %}}
