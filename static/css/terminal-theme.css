@@ -615,6 +615,19 @@ p, span, div, li, td {
   background: rgba(13, 13, 13, 0.9) !important;
 }
 
+/* ONEKO DESKTOP CAT STYLING */
+#oneko {
+  width: 32px !important;
+  height: 32px !important;
+  position: fixed !important;
+  pointer-events: none !important;
+  background-image: url('/images/oneko.gif') !important;
+  image-rendering: pixelated !important;
+  background-position: -96px -96px !important;
+  z-index: 9999 !important;
+  background-repeat: no-repeat !important;
+}
+
 /* MOBILE NAVIGATION FIXES */
 /* Fix the actual sidebar toggle button from dev tools */
 .td-sidebar__toggle, .navbar-toggler {

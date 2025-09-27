@@ -1,0 +1,6 @@
+{{/* Include oneko cat on the landing page and docs pages */}}
+{{ if or .IsHome (eq .Section "docs") }}
+<!-- 🐱 Oneko Desktop Cat -->
+<div id="oneko" aria-hidden="true"></div>
+<script src="/js/oneko-final.js"></script>
+{{ end }}
