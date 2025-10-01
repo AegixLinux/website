@@ -230,15 +230,27 @@ body {
   transition: all 0.3s ease !important;
   
   &:hover {
-    background: linear-gradient(135deg, 
+    background: linear-gradient(135deg,
       rgba(0, 255, 255, 0.3) 0%,
       rgba(0, 255, 159, 0.2) 50%,
       rgba(0, 255, 255, 0.3) 100%
     ) !important;
     border-color: #00ffff !important;
-    box-shadow: 
+    box-shadow:
       0 0 30px rgba(0, 255, 255, 0.4),
       inset 0 0 20px rgba(0, 255, 255, 0.1) !important;
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.8) !important;
   }
+}
+
+// 🎨 Custom title and down arrow colors for landing page
+.td-cover-block h1,
+.td-cover-block .display-1,
+.td-cover-block .display-2 {
+  color: #f5deb3 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;
+}
+
+.td-arrow-down svg {
+  fill: #d2b48c !important;
 }

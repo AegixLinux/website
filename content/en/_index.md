@@ -2,6 +2,60 @@
 title: Aegix Linux
 ---
 
+<style>
+.td-cover-block h1,
+.td-cover-block .display-1 {
+  color: #00ff9f !important;
+  animation: sparkle-glow 2s ease-in-out infinite !important;
+  cursor: pointer !important;
+}
+@keyframes sparkle-glow {
+  0%, 100% {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9),
+                 0 0 40px rgba(0, 255, 159, 0.9),
+                 0 0 60px rgba(0, 255, 159, 0.6),
+                 -2px -2px 15px rgba(0, 255, 159, 0.3);
+  }
+  50% {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9),
+                 0 0 60px rgba(0, 255, 159, 1),
+                 0 0 100px rgba(0, 255, 159, 0.8),
+                 -2px -2px 25px rgba(0, 255, 159, 0.5);
+  }
+}
+.td-arrow-down a,
+.td-arrow-down .btn,
+.td-arrow-down .fa-circle-chevron-down,
+.td-arrow-down i {
+  color: #00ff9f !important;
+  animation: arrow-sparkle 2s ease-in-out infinite !important;
+}
+@keyframes arrow-sparkle {
+  0%, 100% {
+    color: #00ff9f !important;
+    text-shadow: 0 0 25px rgba(0, 255, 159, 0.9),
+                 0 0 45px rgba(0, 255, 159, 0.6) !important;
+  }
+  50% {
+    color: #00ffcc !important;
+    text-shadow: 0 0 50px rgba(0, 255, 159, 1),
+                 0 0 80px rgba(0, 255, 159, 0.8) !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const title = document.querySelector('.td-cover-block h1, .td-cover-block .display-1');
+  if (title) {
+    title.style.cursor = 'pointer';
+    title.addEventListener('click', function() {
+      window.open('https://youtu.be/dQw4w9WgXcQ?si=Mb-JwEppw6mHXlbc', '_blank');
+    });
+  }
+});
+</script>
+
 {{< blocks/cover title="Discover Aegix Linux" image_anchor="top" height="full" >}}
 
 <!-- <div style="max-width: 700px; margin: 0 auto 30px auto;">
@@ -23,15 +77,17 @@ title: Aegix Linux
   Cyphertext Alcove <i class="fas fa-lock ms-2"></i>
 </a>
 <br>
-<!-- Updated banner color to match muted theme -->
-<p class="lead mt-5" style="background-color: rgba(0,0,0,0.6) !important; color: white !important; display: inline-block; padding: 10px 18px; font-weight: bold; text-shadow: 0 0 5px rgba(0,0,0,0.5); border-radius: 5px;">An Elite GNU/Linux System</p>
-
-{{< blocks/link-down color="white" >}}
+<div style="text-align: center; margin-top: 60px;">
+  <a href="#td-block-1" aria-label="Read more" style="display: inline-block; color: #00ff9f !important; text-decoration: none;">
+    <i class="fa-solid fa-circle-chevron-down" style="font-size: 400%; color: #00ff9f !important;"></i>
+  </a>
+</div>
 {{< /blocks/cover >}}
 
 
 {{% blocks/lead color="dark" %}}
-Practice and learn evergreen technology principles.
+This isn't our operating system.
+It's yours.
 {.h1 .text-center}
 {{% /blocks/lead %}}
 
