@@ -5,7 +5,7 @@ authorURL: "https://github.com/mason-u-borchard"
 date: 2024-08-11
 description: >
   A guide to managing the Trash directory in Aegix Linux using the command line.
-categories: [maintainance]
+categories: [maintenance]
 tags: [docs, file-management, trash]
 weight: 15
 ---
