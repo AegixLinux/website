@@ -1,0 +1,21 @@
+---
+title: Set Up SSH
+author: Timothy Beach
+authorURL: "https://github.com/timbeach"
+description: >
+  Get some quick assistance creating an ssh key pair to connect to other machines on your network or out on the internet.
+date: 2024-01-01
+weight: 40
+---
+
+## What is SSH?
+
+SSH (Secure Shell) is a network protocol that allows you to connect to other machines on your network or out on the internet. It's a secure way to connect to other machines and perform tasks remotely.
+
+## Generate an SSH key pair
+
+To connect to other machines using SSH, you'll need to generate an SSH key pair. You can do this using the `ssh-keygen` command. If you run ssh-keygen without any options, it will use the ed25519 algorithm to generate your key pair.
+
+## Copy your public key to the remote machine
+
+Once you've generated your SSH key pair, you'll need to copy your public key to the remote machine. You can do this using the `ssh-copy-id` command.

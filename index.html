@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aegix Linux</title>
+  <meta name="description" content="Minimal, secure, yours. A suckless Linux distribution with LUKS encryption, runit init, and BTRFS filesystem.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aegix Linux">
+  <meta property="og:description" content="Minimal, secure, yours. A suckless Linux distribution.">
+  <meta property="og:image" content="https://aegixlinux.org/images/aegix-icon-1.png">
+  <meta property="og:url" content="https://aegixlinux.org">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Aegix Linux">
+  <meta name="twitter:description" content="Minimal, secure, yours. A suckless Linux distribution.">
+
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <style>
+    /* ========================================
+       CSS Variables - Suckless Inspired Palette
+       ======================================== */
+    :root {
+      --bg: #1a1a1a;
+      --bg-secondary: #242424;
+      --bg-tertiary: #2e2e2e;
+      --fg: #e0e0e0;
+      --fg-muted: #999;
+      --accent: #c7a162;
+      --accent-green: #59ac6c;
+      --accent-red: #ec523e;
+      --link: #dca917;
+      --link-hover: #f0c040;
+      --code-bg: #2a2a2a;
+      --border: #3a3a3a;
+      --sidebar-width: 280px;
+    }
+
+    /* ========================================
+       Base Styles
+       ======================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+    }
+
+    code {
+      font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+      background: var(--code-bg);
+      padding: 0.15em 0.4em;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      border-left: 3px solid var(--accent);
+      max-width: 100%;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ========================================
+       Layout
+       ======================================== */
+    .app-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ========================================
+       Sidebar
+       ======================================== */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+    }
+
+    .sidebar-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--fg);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .sidebar-logo img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .sidebar-logo:hover {
+      color: var(--accent);
+    }
+
+    /* Search */
+    .search-container {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--fg);
+      font-size: 0.9rem;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .search-input::placeholder {
+      color: var(--fg-muted);
+    }
+
+    /* Navigation */
+    .sidebar-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem 0;
+    }
+
+    .nav-section {
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1.5rem;
+      color: var(--fg);
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .nav-section-title:hover {
+      background: var(--bg-tertiary);
+    }
+
+    .nav-section-title.active {
+      color: var(--accent);
+    }
+
+    .nav-arrow {
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+    }
+
+    .nav-section.expanded .nav-arrow {
+      transform: rotate(90deg);
+    }
+
+    .nav-children {
+      display: none;
+      padding-left: 1rem;
+    }
+
+    .nav-section.expanded .nav-children {
+      display: block;
+    }
+
+    .nav-item {
+      display: block;
+      padding: 0.4rem 1.5rem;
+      color: var(--fg-muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-item:hover {
+      color: var(--link);
+      background: var(--bg-tertiary);
+    }
+
+    .nav-item.active {
+      color: var(--accent);
+      border-right: 2px solid var(--accent);
+    }
+
+    /* Sidebar Footer */
+    .sidebar-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    .sidebar-footer a {
+      display: inline-block;
+      margin-right: 1rem;
+      color: var(--fg-muted);
+    }
+
+    .sidebar-footer a:hover {
+      color: var(--link);
+    }
+
+    /* ========================================
+       Main Content
+       ======================================== */
+    .main-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      min-height: 100vh;
+    }
+
+    /* ========================================
+       Landing Page
+       ======================================== */
+    .landing {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--fg);
+    }
+
+    .hero-tagline {
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--fg-muted);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: var(--link-hover);
+      color: var(--bg);
+    }
+
+    .btn-secondary {
+      background: var(--bg-tertiary);
+      color: var(--fg);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Features Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .feature-card {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .feature-card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .feature-card p {
+      color: var(--fg-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Install Section */
+    .install-section {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+
+    .install-section h2 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .install-section p {
+      color: var(--fg-muted);
+      margin-bottom: 1rem;
+    }
+
+    .install-command {
+      background: var(--bg);
+      padding: 1rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: var(--accent-green);
+      border-left: 3px solid var(--accent-green);
+    }
+
+    /* Core Stack */
+    .stack-section {
+      margin-bottom: 4rem;
+    }
+
+    .stack-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--fg);
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .stack-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: var(--bg-secondary);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .stack-item h4 {
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .stack-item p {
+      color: var(--fg-muted);
+      font-size: 0.85rem;
+    }
+
+    /* ========================================
+       Documentation Page
+       ======================================== */
+    .doc-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .doc-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-header h1 {
+      font-size: 2rem;
+      color: var(--fg);
+      margin-bottom: 0.5rem;
+    }
+
+    .doc-meta {
+      color: var(--fg-muted);
+      font-size: 0.9rem;
+    }
+
+    .doc-body {
+      line-height: 1.8;
+    }
+
+    .doc-body h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .doc-body h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--fg);
+      font-size: 1.2rem;
+    }
+
+    .doc-body h4 {
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--fg-muted);
+      font-size: 1.05rem;
+    }
+
+    .doc-body p {
+      margin-bottom: 1rem;
+    }
+
+    .doc-body ul, .doc-body ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .doc-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .doc-body img {
+      max-width: 100%;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+
+    .doc-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+      margin: 1rem 0;
+      color: var(--fg-muted);
+      font-style: italic;
+    }
+
+    /* ========================================
+       Search Results
+       ======================================== */
+    .search-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      max-height: 300px;
+      overflow-y: auto;
+      display: none;
+      z-index: 200;
+    }
+
+    .search-results.show {
+      display: block;
+    }
+
+    .search-result-item {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .search-result-item:hover {
+      background: var(--bg-tertiary);
+    }
+
+    .search-result-item:last-child {
+      border-bottom: none;
+    }
+
+    .search-result-title {
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    .search-result-path {
+      color: var(--fg-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       Mobile Responsive
+       ======================================== */
+    .mobile-header {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-secondary);
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      z-index: 150;
+    }
+
+    .mobile-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      color: var(--fg);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 90;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .sidebar-overlay.show {
+        display: block;
+      }
+
+      .mobile-header {
+        display: block;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding-top: 60px;
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+
+      .landing {
+        padding: 2rem 1rem;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-tagline {
+        font-size: 1.1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .hero-logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .stack-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .doc-content {
+        padding: 1rem;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .doc-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .doc-body {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      pre {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      code {
+        font-size: 0.85em;
+        word-break: break-word;
+      }
+
+      .install-command {
+        font-size: 0.8rem;
+        word-break: break-all;
+      }
+    }
+
+    /* ========================================
+       Utilities
+       ======================================== */
+    .hidden {
+      display: none !important;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: var(--fg-muted);
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="mobile-header-inner">
+      <a href="#/" class="sidebar-logo">
+        <img src="images/aegix-icon-1.png" alt="Aegix">
+        <span>Aegix Linux</span>
+      </a>
+      <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle menu">
+        &#9776;
+      </button>
+    </div>
+  </header>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="#/" class="sidebar-logo">
+          <img src="images/aegix-icon-1.png" alt="Aegix">
+          <span>Aegix Linux</span>
+        </a>
+      </div>
+
+      <div class="search-container" style="position: relative;">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search docs..."
+          id="searchInput"
+          autocomplete="off"
+        >
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebarNav">
+        <!-- Navigation generated by JavaScript -->
+        <div class="loading">Loading...</div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/AegixLinux" target="_blank">GitHub</a>
+        <a href="https://www.youtube.com/@aegixlinux" target="_blank">YouTube</a>
+        <a href="https://twitter.com/aegixlinux" target="_blank">X/Twitter</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+      <!-- Content rendered by JavaScript -->
+    </main>
+  </div>
+
+  <script>
+    // ========================================
+    // State
+    // ========================================
+    let docsData = null;
+    let docsContent = {};
+    let searchIndex = [];
+
+    // ========================================
+    // Docs Structure
+    // ========================================
+    const docsStructure = {
+      sections: [
+        {
+          title: "Overview",
+          path: "overview/_index.md",
+          weight: 10,
+          children: []
+        },
+        {
+          title: "Installation",
+          path: "installation/_index.md",
+          weight: 20,
+          children: [
+            { title: "Compatible Devices", path: "installation/compatible-devices.md" },
+            { title: "Customizing Packages", path: "installation/customizing-aegix-programs.md" },
+            { title: "Troubleshooting", path: "installation/install-failed.md" },
+            { title: "Multiple TTYs", path: "installation/multiple-ttys.md" }
+          ]
+        },
+        {
+          title: "Getting Started",
+          path: "getting-started/_index.md",
+          weight: 25,
+          children: [
+            { title: "Adjust Volume", path: "getting-started/adjust-volume.md" },
+            { title: "Change Hostname", path: "getting-started/change-hostname-and-username.md" },
+            { title: "Connect WiFi", path: "getting-started/connect-wifi.md" },
+            { title: "External Keyboards", path: "getting-started/external-keyboards.md" },
+            { title: "Launch Browser", path: "getting-started/launch-web-browser.md" },
+            { title: "Screen Brightness", path: "getting-started/screen-brightness.md" },
+            { title: "Screenshots", path: "getting-started/screenshots.md" },
+            { title: "Terminal Tips", path: "getting-started/terminal-related.md" },
+            { title: "Viewing Images", path: "getting-started/viewing-images.md" },
+            { title: "Viewing PDFs", path: "getting-started/viewing-pdfs.md" }
+          ]
+        },
+        {
+          title: "Configuration",
+          path: "configuration/_index.md",
+          weight: 35,
+          children: [
+            { title: "Desktop Background", path: "configuration/change-desktop-background-image.md" },
+            { title: "External Monitors", path: "configuration/external-monitors.md" }
+          ]
+        },
+        {
+          title: "Maintenance",
+          path: "maintenance/_index.md",
+          weight: 30,
+          children: [
+            { title: "Managing Trash", path: "maintenance/managing-trash.md" },
+            { title: "System Snapshots", path: "maintenance/automate-system-snapshots.md" },
+            { title: "DNS Fix", path: "maintenance/dns-resolution-fix.md" }
+          ]
+        },
+        {
+          title: "Privacy",
+          path: "privacy/_index.md",
+          weight: 20,
+          children: [
+            { title: "GPG Setup", path: "privacy/gpg.md" },
+            { title: "Pass Manager", path: "privacy/pass.md" },
+            { title: "Password Generation", path: "privacy/passgen.md" },
+            { title: "Cyphertext Alcove", path: "privacy/cyphertext-alcove.md" }
+          ]
+        },
+        {
+          title: "Tutorials",
+          path: "tutorials/_index.md",
+          weight: 40,
+          children: [
+            { title: "AnyConnect VPN", path: "tutorials/anyconnect-vpn.md" },
+            { title: "Bluetooth", path: "tutorials/bluetooth.md" },
+            { title: "Git Obsidian Vault", path: "tutorials/git-obsidian-vault.md" },
+            { title: "IPv6 Setup", path: "tutorials/ipvsix.md" },
+            { title: "SSH", path: "tutorials/ssh.md" }
+          ]
+        },
+        {
+          title: "Philosophy",
+          path: "philosphical/_index.md",
+          weight: 100,
+          children: [
+            { title: "Chromebook", path: "philosphical/chromebook.md" },
+            { title: "Corporate Agenda", path: "philosphical/corporate-agenda.md" }
+          ]
+        },
+        {
+          title: "Way-gix (Wayland)",
+          path: "Way-gix/_index.md",
+          weight: 110,
+          children: []
+        },
+        {
+          title: "Aegix GPT",
+          path: "aegix-gpt/_index.md",
+          weight: 110,
+          children: []
+        },
+        {
+          title: "Vulnerability Mitigation",
+          path: "vulnerability-mitigation/index.md",
+          weight: 1000,
+          children: []
+        }
+      ]
+    };
+
+    // ========================================
+    // Initialize
+    // ========================================
+    document.addEventListener('DOMContentLoaded', () => {
+      renderNavigation();
+      buildSearchIndex();
+      handleRoute();
+      window.addEventListener('hashchange', handleRoute);
+      setupSearch();
+    });
+
+    // ========================================
+    // Navigation
+    // ========================================
+    function renderNavigation() {
+      const nav = document.getElementById('sidebarNav');
+      let html = '';
+
+      docsStructure.sections.sort((a, b) => a.weight - b.weight);
+
+      for (const section of docsStructure.sections) {
+        const hasChildren = section.children && section.children.length > 0;
+        const sectionId = section.path.replace(/[\/\.]/g, '-');
+
+        html += `<div class="nav-section" id="section-${sectionId}">`;
+        html += `<div class="nav-section-title" onclick="toggleSection('${sectionId}', '${section.path}')">`;
+        html += `<span>${section.title}</span>`;
+        if (hasChildren) {
+          html += `<span class="nav-arrow">&#9654;</span>`;
+        }
+        html += `</div>`;
+
+        if (hasChildren) {
+          html += `<div class="nav-children">`;
+          for (const child of section.children) {
+            html += `<a href="#/docs/${child.path}" class="nav-item" data-path="${child.path}">${child.title}</a>`;
+          }
+          html += `</div>`;
+        }
+        html += `</div>`;
+      }
+
+      nav.innerHTML = html;
+    }
+
+    function toggleSection(sectionId, path) {
+      const section = document.getElementById(`section-${sectionId}`);
+      const hasChildren = section.querySelector('.nav-children');
+
+      if (hasChildren) {
+        section.classList.toggle('expanded');
+      } else {
+        window.location.hash = `/docs/${path}`;
+      }
+    }
+
+    function updateActiveNav(currentPath) {
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+        if (item.dataset.path === currentPath) {
+          item.classList.add('active');
+          // Expand parent section
+          const section = item.closest('.nav-section');
+          if (section) section.classList.add('expanded');
+        }
+      });
+
+      document.querySelectorAll('.nav-section-title').forEach(title => {
+        title.classList.remove('active');
+      });
+
+      // Check if current path matches a section index
+      for (const section of docsStructure.sections) {
+        if (section.path === currentPath) {
+          const sectionId = section.path.replace(/[\/\.]/g, '-');
+          const sectionEl = document.getElementById(`section-${sectionId}`);
+          if (sectionEl) {
+            sectionEl.querySelector('.nav-section-title').classList.add('active');
+          }
+        }
+      }
+    }
+
+    // ========================================
+    // Routing
+    // ========================================
+    function handleRoute() {
+      const hash = window.location.hash || '#/';
+      const main = document.getElementById('mainContent');
+
+      if (hash === '#/' || hash === '') {
+        renderLanding(main);
+      } else if (hash.startsWith('#/docs/')) {
+        const docPath = hash.replace('#/docs/', '');
+        renderDoc(main, docPath);
+      } else {
+        renderLanding(main);
+      }
+
+      // Close mobile sidebar
+      document.querySelector('.sidebar').classList.remove('open');
+      document.querySelector('.sidebar-overlay').classList.remove('show');
+    }
+
+    // ========================================
+    // Landing Page
+    // ========================================
+    function renderLanding(container) {
+      container.innerHTML = `
+        <div class="landing">
+          <section class="hero">
+            <img src="images/aegix-icon-1.png" alt="Aegix Linux" class="hero-logo">
+            <h1>Aegix Linux</h1>
+            <p class="hero-tagline">Minimal. Secure. Yours.</p>
+            <p class="hero-subtitle">
+              A turn-key Linux distribution built on Artix with suckless software,
+              LUKS encryption, and BTRFS filesystem.
+            </p>
+            <div class="hero-buttons">
+              <a href="#/docs/installation/_index.md" class="btn btn-primary">Get Started</a>
+              <a href="#/docs/overview/_index.md" class="btn btn-secondary">Documentation</a>
+              <a href="https://github.com/AegixLinux" target="_blank" class="btn btn-secondary">GitHub</a>
+            </div>
+          </section>
+
+          <section class="features">
+            <div class="feature-card">
+              <h3>Invest in Yourself</h3>
+              <p>Learn evergreen technology that has stood the test of time. Unix philosophy, vim-centricity, and simplicity at its core.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Turn-Key Installation</h3>
+              <p>Automated setup gets you up and running quickly with a secure, fully configured system out of the box.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Developer Friendly</h3>
+              <p>Full development environment ready to go. Great for learning and practicing software development.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Security First</h3>
+              <p>LUKS encryption by default, privacy-focused tools, and no telemetry. Your data stays yours.</p>
+            </div>
+          </section>
+
+          <section class="install-section">
+            <h2>Quick Install</h2>
+            <p>Boot from the <a href="https://aegixlinux.org/artix-base-runit-20250303-x86_64.iso">Artix Base ISO</a>, connect to the internet, and run:</p>
+            <div class="install-command">curl -LO aegixlinux.org/install.sh && sh install.sh</div>
+          </section>
+
+          <section class="stack-section">
+            <h2>Core Stack</h2>
+            <div class="stack-grid">
+              <div class="stack-item">
+                <h4>Suckless</h4>
+                <p>dwm, st, dmenu</p>
+              </div>
+              <div class="stack-item">
+                <h4>LUKS</h4>
+                <p>Full disk encryption</p>
+              </div>
+              <div class="stack-item">
+                <h4>runit</h4>
+                <p>Init system (no systemd)</p>
+              </div>
+              <div class="stack-item">
+                <h4>BTRFS</h4>
+                <p>Snapshots & rollback</p>
+              </div>
+              <div class="stack-item">
+                <h4>PipeWire</h4>
+                <p>Modern audio</p>
+              </div>
+              <div class="stack-item">
+                <h4>Artix</h4>
+                <p>Arch-based, rolling</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      `;
+      updateActiveNav('');
+    }
+
+    // ========================================
+    // Document Rendering
+    // ========================================
+    async function renderDoc(container, docPath) {
+      container.innerHTML = '<div class="loading">Loading...</div>';
+
+      try {
+        const response = await fetch(`docs/${docPath}?t=${Date.now()}`);
+        if (!response.ok) throw new Error('Document not found');
+
+        let content = await response.text();
+
+        // Strip Hugo front matter
+        content = stripFrontMatter(content);
+
+        // Parse markdown
+        const html = parseMarkdown(content);
+
+        // Get title from first heading or path
+        const titleMatch = content.match(/^#\s+(.+)$/m) || content.match(/^##\s+(.+)$/m);
+        const title = titleMatch ? titleMatch[1] : docPath.split('/').pop().replace(/\.md$/, '');
+
+        container.innerHTML = `
+          <div class="doc-content">
+            <div class="doc-header">
+              <h1>${title}</h1>
+            </div>
+            <div class="doc-body">
+              ${html}
+            </div>
+          </div>
+        `;
+
+        updateActiveNav(docPath);
+        window.scrollTo(0, 0);
+
+      } catch (error) {
+        container.innerHTML = `
+          <div class="doc-content">
+            <div class="doc-header">
+              <h1>Document Not Found</h1>
+            </div>
+            <div class="doc-body">
+              <p>The requested document could not be loaded.</p>
+              <p><a href="#/">Return to home</a></p>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // ========================================
+    // Markdown Parser
+    // ========================================
+    function stripFrontMatter(content) {
+      // Remove YAML front matter (--- ... ---)
+      return content.replace(/^---[\s\S]*?---\n*/m, '');
+    }
+
+    function parseMarkdown(content) {
+      let html = content;
+
+      // Handle Hugo shortcodes first
+      // {{< figure src="..." >}} or {{< figure src="..." width="..." >}}
+      html = html.replace(/\{\{<\s*figure\s+src="([^"]+)"(?:\s+width="([^"]+)")?\s*>\}\}/g,
+        (match, src, width) => {
+          // Use width as a hint but let CSS max-width: 100% take precedence on mobile
+          const widthAttr = width ? ` width="${width}"` : '';
+          return `<img src="${src}" alt=""${widthAttr}>`;
+        }
+      );
+
+      // Remove any other Hugo shortcodes we don't handle
+      html = html.replace(/\{\{[<>%][\s\S]*?[>%]\}\}/g, '');
+
+      // Protect code blocks with unique markers
+      const codeBlocks = [];
+      let codeIndex = 0;
+
+      html = html.replace(/```(\w*)\n?([\s\S]*?)```/g, (match, lang, code) => {
+        const placeholder = `\n<!--CODE_BLOCK_${codeIndex}-->\n`;
+        codeBlocks.push({ index: codeIndex, lang, code: code.trim() });
+        codeIndex++;
+        return placeholder;
+      });
+
+      // Inline code (but not inside code block placeholders)
+      html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+      // Headers
+      html = html.replace(/^#### (.+)$/gm, '<h4>$1</h4>');
+      html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+      html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+      html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+
+      // Bold and italic (handle __ for bold too)
+      html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+      html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+      // Images
+      html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
+
+      // Links
+      html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
+        // Handle internal doc links
+        if (url.startsWith('/docs/')) {
+          return `<a href="#${url}">${text}</a>`;
+        }
+        // External links
+        if (url.startsWith('http')) {
+          return `<a href="${url}" target="_blank" rel="noopener">${text}</a>`;
+        }
+        return `<a href="${url}">${text}</a>`;
+      });
+
+      // Blockquotes
+      html = html.replace(/^>\s*(.+)$/gm, '<blockquote>$1</blockquote>');
+
+      // Unordered lists
+      html = html.replace(/^[\*\-]\s+(.+)$/gm, '<li>$1</li>');
+      html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
+
+      // Ordered lists
+      html = html.replace(/^\d+\.\s+(.+)$/gm, '<li>$1</li>');
+
+      // Paragraphs - split on double newlines but preserve code block markers
+      html = html.split(/\n\n+/).map(block => {
+        block = block.trim();
+        if (!block) return '';
+        if (block.startsWith('<')) return block;
+        if (block.includes('<!--CODE_BLOCK_')) return block;
+        return `<p>${block}</p>`;
+      }).join('\n');
+
+      // Clean up
+      html = html.replace(/<p><(h[1-6]|ul|ol|blockquote|pre|img)/g, '<$1');
+      html = html.replace(/<\/(h[1-6]|ul|ol|blockquote|pre)><\/p>/g, '</$1>');
+      html = html.replace(/<p>\s*<\/p>/g, '');
+      html = html.replace(/<p>(<!--CODE_BLOCK_\d+-->)<\/p>/g, '$1');
+
+      // Restore code blocks
+      codeBlocks.forEach(({ index, lang, code }) => {
+        const escaped = code
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+        const codeHtml = lang
+          ? `<pre><code class="language-${lang}">${escaped}</code></pre>`
+          : `<pre><code>${escaped}</code></pre>`;
+        html = html.replace(`<!--CODE_BLOCK_${index}-->`, codeHtml);
+      });
+
+      return html;
+    }
+
+    // ========================================
+    // Search
+    // ========================================
+    function buildSearchIndex() {
+      searchIndex = [];
+
+      for (const section of docsStructure.sections) {
+        searchIndex.push({
+          title: section.title,
+          path: section.path,
+          section: section.title
+        });
+
+        for (const child of section.children || []) {
+          searchIndex.push({
+            title: child.title,
+            path: child.path,
+            section: section.title
+          });
+        }
+      }
+    }
+
+    function setupSearch() {
+      const input = document.getElementById('searchInput');
+      const results = document.getElementById('searchResults');
+
+      input.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+
+        if (!query) {
+          results.classList.remove('show');
+          return;
+        }
+
+        const matches = searchIndex.filter(item =>
+          item.title.toLowerCase().includes(query) ||
+          item.section.toLowerCase().includes(query)
+        );
+
+        if (matches.length === 0) {
+          results.innerHTML = '<div class="search-result-item"><span class="search-result-title">No results found</span></div>';
+        } else {
+          results.innerHTML = matches.slice(0, 10).map(item => `
+            <div class="search-result-item" onclick="navigateToDoc('${item.path}')">
+              <div class="search-result-title">${item.title}</div>
+              <div class="search-result-path">${item.section}</div>
+            </div>
+          `).join('');
+        }
+
+        results.classList.add('show');
+      });
+
+      input.addEventListener('blur', () => {
+        setTimeout(() => results.classList.remove('show'), 200);
+      });
+
+      input.addEventListener('focus', () => {
+        if (input.value.trim()) {
+          results.classList.add('show');
+        }
+      });
+    }
+
+    function navigateToDoc(path) {
+      window.location.hash = `/docs/${path}`;
+      document.getElementById('searchInput').value = '';
+      document.getElementById('searchResults').classList.remove('show');
+    }
+
+    // ========================================
+    // Mobile
+    // ========================================
+    function toggleSidebar() {
+      document.querySelector('.sidebar').classList.toggle('open');
+      document.querySelector('.sidebar-overlay').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
