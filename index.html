@@ -706,62 +706,6 @@
     }
 
     /* ========================================
-       Modal
-       ======================================== */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      padding: 1rem;
-    }
-
-    .modal-overlay.hidden {
-      display: none;
-    }
-
-    .modal {
-      background: var(--bg-secondary);
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      max-width: 600px;
-      width: 100%;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .modal h2 {
-      color: var(--accent);
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-    }
-
-    .modal p {
-      color: var(--fg);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .modal-close {
-      background: var(--accent);
-      color: var(--bg);
-      border: none;
-      padding: 0.75rem 2rem;
-      border-radius: 4px;
-      font-weight: 500;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-
-    .modal-close:hover {
-      background: var(--link-hover);
-    }
-
-    /* ========================================
        Developer Notes Section
        ======================================== */
     .dev-notes {
@@ -791,15 +735,6 @@
   </style>
 </head>
 <body>
-  <!-- Announcement Modal -->
-  <div class="modal-overlay" id="announcementModal">
-    <div class="modal">
-      <h2>This system still works!</h2>
-      <p>Go ahead and use it if you like. You can think of it as a brain-dead simple way to get a complete, big-brained Artix system free from the shackles of systemd.</p>
-      <button class="modal-close" onclick="closeModal()">Got it</button>
-    </div>
-  </div>
-
   <!-- Mobile Header -->
   <header class="mobile-header">
     <div class="mobile-header-inner">
@@ -1153,10 +1088,10 @@
           <section class="dev-notes">
             <h2>Developer Notes</h2>
             <p>
-              All my efforts in this realm are going towards a second flavor of Aegix for those who aren't so hardware-constrained and want to try a minimal <strong>Wayland + Hyprland</strong> system (with no systemd ofc) for almost zero effort on your part. I've been running this setup for a couple months, tinkering with everything, finding the strengths and weaknesses of everything from aesthetics to top bar (I like and hate waybar & think it's the best that works on Wayland, as of now, even though dwmbar slays it (but ofc only works on X11)) to a host of sensible, minimal, custom menus to terminal emulators (I think the Aegix build of <strong>foot</strong> with several important configuration and custom scripts, is the most elegant) to drop-down terminals to almost identical-to-vanilla-Aegix vim-based keybinds for everything.
+              After 4 months of daily-driving a <strong>Wayland + Hyprland</strong> setup, tinkering with everything from waybar to foot to custom menus and drop-down terminals, I've made a decision: the core technology is simply too bloated to reproduce the elegance and snappiness of the <strong>X11 + suckless</strong> environment that defines Aegix. The Wayland ecosystem has promise, but it adds layers of complexity and overhead that run counter to everything this project stands for.
             </p>
             <p>
-              Some young people may appreciate the animations, but frankly they started making me nauseous after a short bit, so they are off by default. I'm working towards an official ISO release for this version I'm calling <strong>wAegix</strong>, which will just be the second flavor of Aegix. We have vanilla X11 + suckless which is brilliantly minimal and as snappy a computing experience as I've ever seen, and soon we'll have the more modern one which sadly is not as snappy inherently because of the Wayland + Hyprland core.
+              I'm going all in on the original X11 suckless stack. The focus now is on polishing dwm, st, dmenu, and the rest of the Aegix experience into a rock-solid, minimal computing environment and working towards a <strong>stable ISO release</strong> in the next 6 months. No distractions, no second flavors &mdash; just the fastest, most elegant desktop I've ever used, made available to everyone.
             </p>
           </section>
         </div>
@@ -1399,12 +1334,6 @@
       document.querySelector('.sidebar-overlay').classList.toggle('show');
     }
 
-    // ========================================
-    // Modal
-    // ========================================
-    function closeModal() {
-      document.getElementById('announcementModal').classList.add('hidden');
-    }
   </script>
 </body>
 </html>
