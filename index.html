@@ -388,6 +388,13 @@
       margin-bottom: 1rem;
     }
 
+    .dev-notes h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+      opacity: 0.95;
+    }
+
     .install-note {
       font-size: 0.9rem;
       opacity: 0.75;
@@ -1106,11 +1113,71 @@
 
           <section class="dev-notes">
             <h2>Developer Notes</h2>
+
+            <h3>The ISO is here</h3>
             <p>
-              After 4 months of daily-driving a <strong>Wayland + Hyprland</strong> setup, tinkering with everything from waybar to foot to custom menus and drop-down terminals, I've made a decision: the core technology is simply too bloated to reproduce the elegance and snappiness of the <strong>X11 + suckless</strong> environment that defines Aegix. The Wayland ecosystem has promise, but it adds layers of complexity and overhead that run counter to everything this project stands for.
+              Last time I wrote here, I said I was going all in on the X11 suckless stack and working
+              toward a stable ISO release within six months. <strong>That ISO now exists</strong>, it boots on
+              real hardware, and you can download it from the button at the top of this page.
             </p>
             <p>
-              I'm going all in on the original X11 suckless stack. The focus now is on polishing dwm, st, dmenu, and the rest of the Aegix experience into a rock-solid, minimal computing environment and working towards a <strong>stable ISO release</strong> in the next 6 months. No distractions, no second flavors &mdash; just the fastest, most elegant desktop I've ever used, made available to everyone.
+              It installs a complete Aegix system: dwm, st, dmenu and dwmblocks compiled from source
+              during the install, runit instead of systemd, a btrfs root with subvolumes, and
+              <strong>mandatory LUKS full-disk encryption</strong>. Encryption is not a checkbox in the installer.
+              If you do not want your disk encrypted, Aegix is not the distribution for you.
+            </p>
+
+            <h3>How this ISO is actually made</h3>
+            <p>
+              Most distributions are assembled: someone writes a package list and a pile of default
+              config files, and hopes it all adds up to a coherent desktop. Aegix works the other way
+              around. There is a real machine, my daily driver, and the ISO is <em>captured</em> from it.
+            </p>
+            <p>
+              A pipeline reads that machine, strips out everything personal, and refuses to build if
+              anything private slips through. Every file and every package carries a recorded decision:
+              ship it, never ship it, or curate it by hand. When I improve my own setup, the distribution
+              inherits the improvement on the next sync. When I remove something, it leaves the ISO too.
+              The desktop you install is the desktop I use, minus me.
+            </p>
+            <p>
+              The guard rails are not decorative. Building this, the leak gate caught a script that would
+              have synced a new user's password store to my server, a compiled binary with my home
+              directory baked into it, and a config file naming my monitors. That is the kind of thing
+              that quietly ships in hobby distributions, and it does not ship here.
+            </p>
+
+            <h3>What that means if you want to help</h3>
+            <p>
+              Aegix is a curated distribution, and I want to be honest about what that implies: the
+              capture step runs on my machine, so it is not something anyone else can run. Everything
+              downstream of it is wide open, and that is most of the project.
+            </p>
+            <p>
+              The single most useful thing you can do is <strong>install Aegix on your own hardware and tell me
+              what broke</strong>. There is an audit tool in the repo that compares a real installation against
+              what the ISO intended to ship, and it reports in one pass. Different hardware finds
+              different bugs. A locale that was set but never generated killed the application launcher
+              on every install while working perfectly on my machine. Users were being created without
+              the group needed to change screen brightness. Neither was findable here.
+            </p>
+            <p>
+              Beyond that: the suckless forks take ordinary pull requests, the installer is a plain shell
+              script you can test in a virtual machine, and the tooling has a real test suite. See
+              <a href="https://github.com/AegixLinux/aegixlinux/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>
+              for the details.
+            </p>
+
+            <h3>What is next</h3>
+            <p>
+              The current ISO installs over the network: it fetches the base system and desktop packages
+              while it runs. The next milestone is an <strong>offline installer</strong>, with the packages baked into
+              the image so an install is a copy rather than a download, reproducible and independent of
+              what the mirrors are serving that day.
+            </p>
+            <p>
+              Every installed system records the exact build it came from in <code>/etc/aegix-release</code>.
+              If you file a bug, start with that file, and I will know precisely what you are running.
             </p>
           </section>
         </div>
