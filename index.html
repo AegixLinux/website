@@ -388,6 +388,12 @@
       margin-bottom: 1rem;
     }
 
+    .install-note {
+      font-size: 0.9rem;
+      opacity: 0.75;
+      margin-top: 0.75rem;
+    }
+
     .install-command {
       background: var(--bg);
       padding: 1rem;
@@ -1028,8 +1034,8 @@
               LUKS encryption, and BTRFS filesystem.
             </p>
             <div class="hero-buttons">
-              <a href="#/docs/installation/_index.md" class="btn btn-primary">Get Started</a>
-              <a href="#/docs/overview/_index.md" class="btn btn-secondary">Documentation</a>
+              <a href="https://github.com/AegixLinux/aegixlinux/releases/latest" class="btn btn-primary">Download the ISO</a>
+              <a href="#/docs/installation/_index.md" class="btn btn-secondary">Installation Guide</a>
               <a href="https://github.com/AegixLinux" target="_blank" class="btn btn-secondary">GitHub</a>
             </div>
           </section>
@@ -1050,9 +1056,22 @@
           </section>
 
           <section class="install-section">
-            <h2>Quick Install</h2>
-            <p>Boot from the <a href="https://aegixlinux.org/artix-base-runit-20250303-x86_64.iso">Artix Base ISO</a>, connect to the internet, and run:</p>
-            <div class="install-command">curl -LO aegixlinux.org/install.sh && sh install.sh</div>
+            <h2>Install</h2>
+            <p>
+              Aegix now ships its own ISO. Write it to a USB stick, boot it, and
+              the installer takes it from there.
+            </p>
+            <div class="install-command">sudo dd if=aegix-20260805-x86_64.iso of=/dev/sdX bs=4M status=progress oflag=sync</div>
+            <p>At the live prompt, connect to the network and run:</p>
+            <div class="install-command">sh install.sh</div>
+            <p class="install-note">
+              <a href="https://github.com/AegixLinux/aegixlinux/releases/latest">Download the latest ISO</a>
+              &middot; 1.7&nbsp;GB &middot; UEFI and legacy BIOS &middot; checksum published with each release
+            </p>
+            <p class="install-note">
+              Already running Artix? You can still build an Aegix system in place:
+              <code>curl -LO aegixlinux.org/install.sh && sh install.sh</code>
+            </p>
           </section>
 
           <section class="stack-section">

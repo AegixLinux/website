@@ -10,20 +10,30 @@ weight: 20
 
 ## Create a bootable USB
 
-Download this specific (aegix-hosted), STABLE version of the <a href="https://aegixlinux.org/artix-base-runit-20250303-x86_64.iso"><strong><span style="font-size: 1.5em;">artix-base-runit ISO</span></strong></a>, you'll need to create a bootable USB drive. You can use any tool you like, but I recommend [Rufus](https://rufus.ie/en/) or [Ventoy](https://www.ventoy.net/en/index.html). They're free, open source, and work on Windows, Linux, and MacOS.
+Download the [**Aegix Linux ISO**](https://github.com/AegixLinux/aegixlinux/releases/latest)
+(about 1.7 GB). It boots on both UEFI and legacy BIOS machines. On some
+hardware you will need to disable Secure Boot first.
 
-After downloading the ISO, you can run `sha256sum artix-base-runit-20250303-x86_64.iso`, which should output the following hash. _We do this to ensure the ISO hasn't been tampered with._
-``` shell
-6368cacc6dd8fdfe8ea74949d2c836d81c6e9d562f50f6ad2c1bf188502c4c51  artix-base-runit-20250303-x86_64.iso
-```
-
-If you're using Ventoy, you can just download the ISO and copy it to the USB drive. If you're using Rufus, you'll need to download the ISO and use Rufus to create the bootable USB.
-
-If you're coming from Ubuntu or another Linux distro, you can use the `dd` command to copy the ISO to the USB drive. For example:
+Verify the download before you write it, so you know it arrived intact:
 
 ``` shell
-sudo dd if=/path/to/artix-base-runit.iso of=/dev/sdX bs=4M status=progress oflag=sync
+sha256sum aegix-20260805-x86_64.iso
 ```
+
+``` shell
+2416417998fad174818b2ddab9447ee5b6c32b45c0f00acb2baf8bd688365eda  aegix-20260805-x86_64.iso
+```
+
+Then write it to a USB stick. On Linux:
+
+``` shell
+sudo dd if=aegix-20260805-x86_64.iso of=/dev/sdX bs=4M status=progress oflag=sync
+```
+
+Replace `/dev/sdX` with your USB device, and check it twice with `lsblk`:
+`dd` will overwrite whatever you point it at without asking. On Windows or
+macOS, [Rufus](https://rufus.ie/en/) and [Ventoy](https://www.ventoy.net/en/index.html)
+both work and are free and open source.
 
 ## Boot from the USB
 
@@ -33,15 +43,27 @@ Once you've created the bootable USB, you'll need to boot from it. This will var
 
 ### Connect to the internet
 
-Unless you want to go through the hassle of manually connecting to wifi, just use a wired connection by plugging in ethernet.
-
-### Download and run the installer script
-
-Once you've booted from the USB, you'll be presented with a terminal. After logging in as `root` with the password `artix`, you can run the following command to download and run the Aegix installer script:
+Ethernet works with no setup. For wifi, run `nmtui`, pick your network, and
+enter the password. Confirm you are really online before continuing:
 
 ``` shell
-curl -LO aegixlinux.org/install.sh && sh install.sh
+ping -c1 8.8.8.8
 ```
+
+The installer downloads the base system and the desktop packages while it
+runs, so a working connection is required.
+
+### Run the installer
+
+The Aegix live session logs you in automatically and prints a short menu. The
+installer is already on the ISO, so just run:
+
+``` shell
+sh install.sh
+```
+
+There is a copy of these instructions at `/root/README.md` on the live system,
+in case the welcome text scrolls away.
 
 ### Follow the prompts
 
