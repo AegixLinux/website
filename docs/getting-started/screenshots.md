@@ -11,14 +11,20 @@ weight: 210
 
 ## Take a screenshot
 
-Use `Shift + PrtSc` to get a menu of screenshot options. 
+Press `PrtSc` to get a menu of screenshot options: select an area, the
+current window, or the entire screen, each going to either your clipboard
+or a file. The program doing the capturing is called `maim`.
 
-You can choose to take a shot of whatever you select, the current window, or the entire screen. You can also choose where or not the screenshot is saved as a file to your home directory or copied to your clipboard. The program used to take screenshots is called `maim`.
+When you save to a file, a second menu asks where. It remembers your last
+five destinations, most recent first, so plain `Enter` saves to wherever
+you saved last time. `~/Pictures/Screenshots` is always in the list, and
+`browse...` lets you pick any directory under your home. You then get to
+edit the filename, or just hit `Enter` to accept the timestamped default.
+
+For a quick area shot with no menus, `Shift + PrtSc` selects an area and
+saves it straight to `~/Pictures/Screenshots`.
 
 ## View screenshots
 
-Open a terminal with `Ultra + Enter` and type `sxiv .` to view all the images in your home directory where screenshots are saved by default.
-
-<!-- ## Automating saved screenshots to move to `~/ss` -->
-
-<!--You can install cronie to run a cron service that will automatically move screenshots to `~/ss` every 5 minutes. -->
+Open a terminal with `Ultra + Enter` and run `sxiv ~/Pictures/Screenshots`
+to flip through what you have captured.

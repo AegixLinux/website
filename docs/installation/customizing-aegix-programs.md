@@ -18,9 +18,9 @@ During the installation of Aegix Linux, you have the option to customize which p
 
 ### Step 1: Install as Usual
 
-Begin the installation of Aegix Linux as you normally would:
+Boot the Aegix ISO and begin the installation as you normally would:
 ```sh
-curl -LO aegixlinux.org/install.sh && sh install.sh
+sh install.sh
 ```
 
 ### Step 2: Move to TTY2
