@@ -17,11 +17,7 @@ In case it isn't obvious, state-sponsored hackers aggressively target not only t
 
 ## Prerequisites
 
-Firstly, make sure you have `pass` installed. You can install it with:
-
-``` shell
-yay -S pass --noconfirm
-```
+`pass` comes installed on Aegix. On any other system, install it with your package manager (`sudo pacman -S pass` on the Arch family).
 
 And be sure to have gpg set up and installed. If you need help with that, check out the [GPG](/docs/privacy/gpg) recipe or this article [Encryption without an App](https://thequantitative.medium.com/send-secret-messages-even-the-four-letter-agencies-cant-break-into-ace64880d04f).
 

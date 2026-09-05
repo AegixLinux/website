@@ -17,5 +17,14 @@ Press `Ultra + F1` to read the built-in documentation of how to get around the s
 
 You may be wondering where the `Ultra` key is on your keyboard. It's the same thing that is sometimes referred to as the `Super` key or the `Windows` key. It's usually the one with the Windows logo on it. However on the chromebooks we've tested, it's the `Search` key, with a magnifying glass image printed on it, by default. 
 
-If you're in a hurry, below is a quick list of things to do to get started with Aegix Linux.
+When you cannot remember a keybinding, press `Ultra + M` (or click the `≡`
+at the top left of the bar) for a menu of the most useful actions: wifi,
+display settings, audio, screenshots, power, and more.
+
+A few good first stops:
+
+- [Connect to wifi](#/docs/getting-started/connect-wifi.md)
+- [Launch a terminal](#/docs/getting-started/terminal-related.md)
+- [Adjust the volume](#/docs/getting-started/adjust-volume.md)
+- [Take a screenshot](#/docs/getting-started/screenshots.md)
 

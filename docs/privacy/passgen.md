@@ -38,7 +38,7 @@ Generate a password using only letters and numbers:
 
 ### Script
 
-By the time you're reading this, Aegix will ship with the `passgen` script in your path.
+Aegix ships the `passgen` script in your path.
 
 Here is the `passgen` shell script:
 

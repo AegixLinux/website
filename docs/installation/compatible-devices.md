@@ -14,7 +14,7 @@ Aegix Linux aims to provide a seamless installation experience across a wide ran
 
 ## Tested Devices
 
-Aegix Linux installation is designed to be straightforward on machines that can be set to LEGACY BIOS mode, targeting the normative x86 CPU architecture. We have conducted tests on a variety of devices to ensure compatibility and performance. Here are the devices that Aegix Linux has been successfully installed on:
+The Aegix ISO boots on both UEFI and legacy BIOS machines, targeting the normative x86 CPU architecture. On some machines you will need to disable Secure Boot. We have conducted tests on a variety of devices to ensure compatibility and performance. Here are the devices that Aegix Linux has been successfully installed on:
 
 ### ThinkPad Series
 - **X220**
@@ -29,4 +29,4 @@ Aegix Linux installation is designed to be straightforward on machines that can 
 - **32GB USB 2.0 Flash Drive**
   - Confirmed Aegix Linux installation on a T440 without internal storage using a PNY 32GB USB 2.0 Flash Drive as the target block device
 
-> We welcome and encourage testing on other hardware platforms. Your contributions help us improve Aegix Linux's compatibility and user experience. If you have successfully installed Aegix Linux on a device not listed here, please share your results.
+> We welcome and encourage testing on other hardware platforms. Your contributions help us improve Aegix Linux's compatibility and user experience. If you have successfully installed Aegix Linux on a device not listed here, please share your results. Include the contents of `/etc/aegix-release` in your report: it records exactly which ISO build and profile commit your system came from.

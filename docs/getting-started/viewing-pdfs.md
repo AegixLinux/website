@@ -31,7 +31,7 @@ Full Screen: F11
 The configuration file for Zathura is located at `~/.config/zathura/zathurarc` and contains additional keybindings and settings:
 
 ``` shell
-sudo vim ~/.config/zathura/zathurarc
+vim ~/.config/zathura/zathurarc
 ```
 
 This is Aegix's out-of-the-box `zathurarc`:
@@ -54,5 +54,5 @@ map g goto top
 ```
 
 Tim note:
-There are also some helpful tips you try out right inside zathura by running `Ctrl + F1`.
-This command invoked by `Ctrl + F1`: `groff -mom /usr/local/share/dwm/barbs.mom -Tpdf | zathura -` takes the barbs ministry of magic file invoked by groff, piped to zathura. Some fun functionality is outlined at the top of this document. My favorites being `s` to fit text to your window and `Ctrl + r` to invoke "reader mode" which inverts the colors.
+There are also some helpful tips you try out right inside zathura by pressing `Ultra + F1`.
+The command invoked by `Ultra + F1`: `groff -mom /usr/local/share/dwm/barbs.mom -Tpdf | zathura -` takes the barbs ministry of magic file invoked by groff, piped to zathura. Some fun functionality is outlined at the top of this document. My favorites being `s` to fit text to your window and `Ctrl + r` to invoke "reader mode" which inverts the colors.

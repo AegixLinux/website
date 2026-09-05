@@ -19,7 +19,7 @@ ip -6 addr show
 
 If so, you'll see something like this:
 ``` Shell
-🪶Aegix:[beach✨byzantium ~]$ ip -6 addr show
+🪶Aegix:[user✨aegix ~]$ ip -6 addr show
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 state UNKNOWN qlen 1000
     inet6 ::1/128 scope host proto kernel_lo
        valid_lft forever preferred_lft forever
