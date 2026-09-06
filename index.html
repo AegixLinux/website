@@ -951,6 +951,10 @@
         html += `</div>`;
       }
 
+      html += `<div class="nav-section">`;
+      html += `<a href="#/releases" class="nav-section-title" style="display: block; text-decoration: none; color: inherit;"><span>Releases</span></a>`;
+      html += `</div>`;
+
       nav.innerHTML = html;
     }
 
@@ -1004,6 +1008,8 @@
       } else if (hash.startsWith('#/docs/')) {
         const docPath = hash.replace('#/docs/', '');
         renderDoc(main, docPath);
+      } else if (hash === '#/releases') {
+        renderReleases(main);
       } else {
         renderLanding(main);
       }
@@ -1065,6 +1071,7 @@
             <div class="install-command">sh install.sh</div>
             <p class="install-note">
               <a href="https://github.com/AegixLinux/aegixlinux/releases/latest">Download the latest ISO</a>
+              &middot; <a href="#/releases">release notes</a>
               &middot; 1.7&nbsp;GB &middot; UEFI and legacy BIOS &middot; checksum published with each release
             </p>
             <p class="install-note">
@@ -1234,6 +1241,61 @@
     function stripFrontMatter(content) {
       // Remove YAML front matter (--- ... ---)
       return content.replace(/^---[\s\S]*?---\n*/m, '');
+    }
+
+    // ========================================
+    // Releases (changelog) - rendered straight from the GitHub Releases API
+    // so the notes are written once, on the release, and never duplicated.
+    // ========================================
+    async function renderReleases(container) {
+      container.innerHTML = '<div class="loading">Loading releases...</div>';
+      try {
+        let releases = null;
+        const cached = sessionStorage.getItem('aegix-releases');
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          if (Date.now() - parsed.at < 10 * 60 * 1000) releases = parsed.data;
+        }
+        if (!releases) {
+          const resp = await fetch('https://api.github.com/repos/AegixLinux/aegixlinux/releases?per_page=20');
+          if (!resp.ok) throw new Error('GitHub API unavailable');
+          releases = await resp.json();
+          try { sessionStorage.setItem('aegix-releases', JSON.stringify({at: Date.now(), data: releases})); } catch (e) {}
+        }
+
+        let html = '';
+        for (const r of releases) {
+          if (r.draft) continue;
+          const date = new Date(r.published_at).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
+          const asset = (r.assets && r.assets[0]) ? r.assets[0] : null;
+          html += `<div class="doc-body" style="margin-bottom: 3rem;">`;
+          html += `<h2>${r.name || r.tag_name} <small style="font-weight: normal; opacity: 0.6; font-size: 0.6em;">${date}</small></h2>`;
+          html += parseMarkdown(r.body || '');
+          html += `<p><a href="${r.html_url}">View on GitHub</a>`;
+          if (asset) html += ` &middot; <a href="${asset.browser_download_url}">${asset.name}</a> (${(asset.size / 1073741824).toFixed(1)} GB)`;
+          html += `</p></div>`;
+        }
+
+        container.innerHTML = `
+          <div class="doc-content">
+            <div class="doc-header">
+              <h1>Releases</h1>
+            </div>
+            ${html || '<p>No releases found.</p>'}
+          </div>
+        `;
+        window.scrollTo(0, 0);
+      } catch (error) {
+        container.innerHTML = `
+          <div class="doc-content">
+            <div class="doc-header"><h1>Releases</h1></div>
+            <div class="doc-body">
+              <p>Could not load the release list right now. See
+              <a href="https://github.com/AegixLinux/aegixlinux/releases">the releases on GitHub</a>.</p>
+            </div>
+          </div>
+        `;
+      }
     }
 
     function parseMarkdown(content) {
