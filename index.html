@@ -1042,6 +1042,7 @@
               <a href="https://github.com/AegixLinux/aegixlinux/releases/latest" class="btn btn-primary">Download the ISO</a>
               <a href="#/docs/installation/_index.md" class="btn btn-secondary">Installation Guide</a>
               <a href="https://github.com/AegixLinux" target="_blank" class="btn btn-secondary">GitHub</a>
+              <a href="#/releases" class="btn btn-secondary">Change Log</a>
             </div>
           </section>
 
@@ -1264,6 +1265,25 @@
         }
 
         let html = '';
+
+        // Unreleased changes: one markdown file in the monorepo, rendered
+        // live from the development branch. Absent, empty, or unreachable
+        // file just means no section; releases still render.
+        try {
+          const uResp = await fetch('https://raw.githubusercontent.com/AegixLinux/aegixlinux/development/CHANGELOG-UNRELEASED.md?t=' + Math.floor(Date.now() / 600000));
+          if (uResp.ok) {
+            let unreleased = await uResp.text();
+            unreleased = unreleased.replace(/<!--[\s\S]*?-->/g, '').trim();
+            if (unreleased) {
+              html += `<div class="doc-body" style="margin-bottom: 3rem; border-left: 3px solid var(--accent, #d9b06c); padding-left: 1rem;">`;
+              html += `<h2>In development <small style="font-weight: normal; opacity: 0.6; font-size: 0.6em;">not yet in an ISO</small></h2>`;
+              html += parseMarkdown(unreleased);
+              html += `<p style="opacity: 0.7; font-size: 0.9em;">These changes ship with the next ISO release.</p>`;
+              html += `</div>`;
+            }
+          }
+        } catch (e) { /* no section */ }
+
         for (const r of releases) {
           if (r.draft) continue;
           const date = new Date(r.published_at).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
