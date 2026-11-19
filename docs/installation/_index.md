@@ -17,17 +17,17 @@ hardware you will need to disable Secure Boot first.
 Verify the download before you write it, so you know it arrived intact:
 
 ``` shell
-sha256sum aegix-20261116-x86_64.iso
+sha256sum aegix-20261119-x86_64.iso
 ```
 
 ``` shell
-3ef4ced064570c3d53fb1ba1b3693e9d5e9d5f4d92b2b14a2aa125abea912fd3  aegix-20261116-x86_64.iso
+215381de4f1879fdfc292961c2979981f4854c35bb546dfd862f1b30e8182351  aegix-20261119-x86_64.iso
 ```
 
 Then write it to a USB stick. On Linux:
 
 ``` shell
-sudo dd if=aegix-20261116-x86_64.iso of=/dev/sdX bs=4M status=progress oflag=sync
+sudo dd if=aegix-20261119-x86_64.iso of=/dev/sdX bs=4M status=progress oflag=sync
 ```
 
 Replace `/dev/sdX` with your USB device, and check it twice with `lsblk`:
